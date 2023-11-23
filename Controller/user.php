@@ -10,8 +10,8 @@ if ($_GET['act']) {
             if (isset($_POST['submit_signup'])) {
                 if (empty($_POST['username'])) {
                     $error['username'] = "Không được để trống trường Username";
-                } elseif (!is_username($_POST['username'])) {
-                    $error['username'] = "Username cho phép sử dụng ký tự, chữ số, dấu chấm, dấu gạch dưới, từ 6 đến 32 ký tự";
+                    // } elseif (!is_username($_POST['username'])) {
+                    //     $error['username'] = "Username cho phép sử dụng ký tự, chữ số, dấu chấm, dấu gạch dưới, từ 6 đến 32 ký tự";
                 } else {
                     $username = $_POST['username'];
                 }
@@ -164,6 +164,27 @@ if ($_GET['act']) {
             }
             $viewName = 'user_changePass';
             break;
+        case "info":
+            // print_r($_SESSION['user']);
+            $viewName = 'page_info';
+            break;
+        case "infoorder":
+            $id = $_SESSION['user']['matk'];
+            $dsdh = get_one_order($id);
+            $viewName = 'page_infoorder';
+            break;
+        case "orderDetail":
+            $id = $_GET['idOrder'];
+            // echo $id;
+            $dsdh = get_order_detail($id);
+            // echo "<pre>";
+            // print_r($dsdh);
+            // echo "<pre>";
+            // return;
+            $viewName = 'page_orderDetail';
+            break;
+
+
         default:
             break;
     }

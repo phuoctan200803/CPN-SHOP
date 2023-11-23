@@ -29,28 +29,32 @@ if (isset($_SESSION['user'])) {
                         Address</span></h5>
                 <div class="bg-light p-30 mb-5">
                     <div class="row">
+                        <?php if (isset($thongbao)) { ?>
+                            <div class="col-md-12 form-group">
+                                <div class="alert alert-warning" role="alert">
+
+                                    echo $thongbao;
+                                </div>
+                            </div>
+                        <?php  } ?>
                         <div class="col-md-12 form-group">
-                            <label>Name</label>
-                            <input class="form-control" type="text" placeholder="John" name="name"
-                                value="<?php echo isset($name) ? $name : ''; ?>">
+                            <label>Họ và tên</label>
+                            <input class="form-control" type="text" placeholder="John" name="name" require value="<?php echo isset($name) ? $name : ''; ?>">
 
                         </div>
 
                         <div class="col-md-12 form-group">
                             <label>E-mail</label>
-                            <input class="form-control" type="text" name="email" placeholder="example@email.com"
-                                value="<?php echo (isset($email)) ? $email : "" ?>">
+                            <input class="form-control" type="text" name="email" placeholder="example@email.com" require value="<?php echo (isset($email)) ? $email : "" ?>">
                         </div>
                         <div class="col-md-12 form-group">
-                            <label>Mobile No</label>
-                            <input class="form-control" type="text" placeholder="+123 456 789" name="mobile"
-                                value="<?php echo (isset($phone)) ? $phone : ""; ?>">
+                            <label>Số điện thoại</label>
+                            <input class="form-control" type="text" placeholder="+123 456 789" name="mobile" require value="<?php echo (isset($phone)) ? $phone : ""; ?>">
 
                         </div>
                         <div class="col-md-12 form-group">
-                            <label>Address Line </label>
-                            <input class="form-control" type="text" placeholder="123 Street" name="address"
-                                value="<?php echo (isset($address)) ? $address : "" ?>">
+                            <label>Địa chỉ </label>
+                            <input class="form-control" type="text" placeholder="123 Street" name="address" require value="<?php echo (isset($address)) ? $address : "" ?>">
                         </div>
 
                         <!-- <div class="col-md-12 form-group">
@@ -63,8 +67,7 @@ if (isset($_SESSION['user'])) {
                         <div class="col-md-12">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="shipto">
-                                <label class="custom-control-label" for="shipto" data-toggle="collapse"
-                                    data-target="#shipping-address">Ship to different address</label>
+                                <label class="custom-control-label" for="shipto" data-toggle="collapse" data-target="#shipping-address">Ship to different address</label>
                             </div>
                         </div>
                     </div>
@@ -112,12 +115,12 @@ if (isset($_SESSION['user'])) {
                         <?php
                         $total = 0;
                         foreach ($_SESSION['cart']['buy'] as $item) {
-                            $total += $item['giakhuyenmai'];
+                            $total += $item['sub_total'];
                         ?>
-                        <div class="d-flex justify-content-between">
-                            <p style="width: 60%; overflow: hidden;"><?= $item['tensp'] ?></p>
-                            <p><?= number_format($item['sub_total']) ?> đ</p>
-                        </div>
+                            <div class="d-flex justify-content-between">
+                                <p style="width: 60%; overflow: hidden;"><?= $item['tensp'] ?></p>
+                                <p><?= number_format($item['sub_total']) ?> đ</p>
+                            </div>
                         <?php } ?>
 
                     </div>
@@ -140,8 +143,8 @@ if (isset($_SESSION['user'])) {
                     </div>
                 </div>
                 <div class="mb-5">
-                    <h5 class="section-title position-relative text-uppercase mb-3"><span
-                            class="bg-secondary pr-3">Payment</span></h5>
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Payment</span>
+                    </h5>
                     <div class="bg-light p-30">
                         <div class="form-group">
                             <div class="custom-control custom-radio">
@@ -161,8 +164,7 @@ if (isset($_SESSION['user'])) {
                                 <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
                             </div>
                             <!-- <div class=""> -->
-                            <input type="submit" class="btn btn-block btn-primary font-weight-bold py-3 mt-3"
-                                name="btn_place_order" value="Place Order" />
+                            <input type="submit" class="btn btn-block btn-primary font-weight-bold py-3 mt-3" name="btn_place_order" value="Place Order" />
                             <!-- </div> -->
                         </div>
                     </div>

@@ -58,30 +58,35 @@ if ($_GET['act']) {
             break;
         case 'sendmail':
             if (isset($_POST['btn_place_order'])) {
-                $tongtien = $_SESSION['cart']['info']['total'];
-                if (!isset($_SESSION['user'])) {
-                    $hoten = $_POST['name'];
-                    $email = $_POST['email'];
-                    $sdt = $_POST['mobile'];
-                    $diaChi = $_POST['address'];
-                    $matKhau = md5('Tanphuoc!2008');
-                    $matk = userInsertID($hoten, $email, $matKhau, $sdt, $diaChi);
+                if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['mobile']) || empty($_POST['address'])) {
+                    $thongbao = "Vui lòng điền đủ thông tin";
                 } else {
-                    $matk = $_SESSION['user']['matk'];
-                    $hoten = $_SESSION['user']['hoten'];
-                    $sdt = $_POST['mobile'];
-                    $diaChi = $_POST['address'];
-                    updateInfo($matk, $sdt, $diaChi);
+                    $tongtien = $_SESSION['cart']['info']['total'];
+                    if (!isset($_SESSION['user'])) {
+                        $hoten = $_POST['name'];
+                        $email = $_POST['email'];
+                        $sdt = $_POST['mobile'];
+                        $diaChi = $_POST['address'];
+                        $matKhau = md5('Tanphuoc!2008');
+                        $matk = userInsertID($hoten, $email, $matKhau, $sdt, $diaChi);
+                    } else {
+                        $matk = $_SESSION['user']['matk'];
+                        $hoten = $_SESSION['user']['hoten'];
+                        $sdt = $_POST['mobile'];
+                        $diaChi = $_POST['address'];
+                        updateInfo($matk, $sdt, $diaChi);
+                    }
+                    addOrder($matk, $tongtien, $diaChi);
+                    foreach ($_SESSION['cart']['buy'] as $key => $item) {
+                        addOrderDetail($key, $item['qty'], $item['giakhuyenmai'], $item['sub_total']);
+                    }
                 }
-
-                addOrder($hoten, $tongtien, $matk);
-                foreach ($_SESSION['cart']['buy'] as $key => $item) {
-                    addOrderDetail($key, $item['qty'], $item['giakhuyenmai'], $item['sub_total']);
-                }
-                include_once 'View/sendmail.php';
             }
+            include_once "View/sendmail.php";
 
-            header("location:index.php?mod=page&act=home");
+            break;
+        case 'success':
+            $viewName = "page_success";
             break;
         default:
             break;

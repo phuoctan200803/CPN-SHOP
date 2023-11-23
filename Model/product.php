@@ -154,3 +154,37 @@ function save_file($fieldname, $target_dir)
         move_uploaded_file($file_uploaded["tmp_name"], $target_path);
     }
 }
+
+// function get_order($id)
+// {
+//     $sql = "SELECT dh.*, ctdh.*, sp.*
+//             FROM donhang dh
+//             INNER JOIN chitietdonhang ctdh ON dh.madh = ctdh.madh
+//             INNER JOIN sanpham sp ON ctdh.masp = sp.masp
+//             WHERE dh.matk = ?";
+//     return pdo_execute_all($sql, [$id]);
+// }
+
+function get_order($id)
+{
+    $sql = "SELECT dh.*, ctdh.*
+            FROM donhang dh
+            INNER JOIN chitietdonhang ctdh ON dh.madh = ctdh.madh
+            WHERE dh.matk = ?";
+    return pdo_execute($sql, $id);
+}
+
+function get_one_order($id)
+{
+    $sql = "SELECT * FROM donhang WHERE matk =? order by madh desc";
+    return pdo_query($sql, $id);
+}
+
+function get_order_detail($id)
+{
+    $sql = "SELECT ctdh.*, sp.tensp, sp.anhsp
+    FROM chitietdonhang ctdh
+    INNER JOIN sanpham sp ON ctdh.masp = sp.masp
+    WHERE ctdh.madh = ?";
+    return pdo_query($sql, $id);
+}

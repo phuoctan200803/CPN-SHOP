@@ -1,10 +1,10 @@
 <script type="text/javascript">
-function checkAll(source) {
-    checkboxes = document.getElementsByName('item[]');
-    for (var i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].checked = source.checked;
+    function checkAll(source) {
+        checkboxes = document.getElementsByName('item[]');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = source.checked;
+        }
     }
-}
 </script>
 
 
@@ -44,18 +44,15 @@ function checkAll(source) {
                 </div>
                 <div class="card">
                     <div class="p-4">
-                        <input type="text" placeholder="Start typing to search for categories"
-                            class="form-control form-control--search mx-auto" id="table-search" />
+                        <input type="text" placeholder="Start typing to search for categories" class="form-control form-control--search mx-auto" id="table-search" />
                     </div>
                     <div class="sa-divider"></div>
                     <form action="?mod=categories&act=delete" method="POST" id="deleteForm">
-                        <table class="sa-datatables-init" data-order='[[ 1, "asc" ]]'
-                            data-sa-search-input="#table-search">
+                        <table class="sa-datatables-init" data-order='[[ 1, "asc" ]]' data-sa-search-input="#table-search">
                             <thead>
                                 <tr>
                                     <th class="w-min">
-                                        <input type="checkbox" class="form-check-input m-0 fs-exact-16 d-block"
-                                            onclick="checkAll(this)" />
+                                        <input type="checkbox" class="form-check-input m-0 fs-exact-16 d-block" onclick="checkAll(this)" />
                                     </th>
                                     <th class="min-w-15x">Tên danh mục</th>
                                     <th>Ưu tiên hiển thị</th>
@@ -67,83 +64,73 @@ function checkAll(source) {
                             <tbody style="margin-bottom: 50px;">
 
                                 <?php foreach ($dsdm as $dm) { ?>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" class="form-check-input m-0 fs-exact-16 d-block"
-                                            name="item[]" value="<?= $dm['madm'] ?>" />
-                                    </td>
-                                    <td>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="form-check-input m-0 fs-exact-16 d-block" name="item[]" value="<?= $dm['madm'] ?>" />
+                                        </td>
+                                        <td>
 
-                                        <div class="d-flex align-items-center">
-                                            <a href="#" class="me-4">
-                                                <div class="sa-symbol sa-symbol--shape--rounded sa-symbol--size--lg">
-                                                    <img src="../img/categories/<?= $dm['anh'] ?>" width="40"
-                                                        height="40" alt="" />
+                                            <div class="d-flex align-items-center">
+                                                <a href="#" class="me-4">
+                                                    <div class="sa-symbol sa-symbol--shape--rounded sa-symbol--size--lg">
+                                                        <img src="../img/product/<?= $dm['anh'] ?>" width="40" height="40" alt="" />
+                                                    </div>
+                                                </a>
+                                                <div>
+                                                    <a href="app-product.html" class="text-reset"><?= $dm['tendm'] ?></a>
+                                                    <div class="sa-meta mt-0">
+                                                        <ul class="sa-meta__list">
+                                                            <li class="sa-meta__item">ID:
+                                                                <span title="Click to copy product ID" class="st-copy"><?= $dm['madm'] ?></span>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
                                                 </div>
+                                            </div>
+
                                             </a>
-                                            <div>
-                                                <a href="app-product.html" class="text-reset"><?= $dm['tendm'] ?></a>
-                                                <div class="sa-meta mt-0">
-                                                    <ul class="sa-meta__list">
-                                                        <li class="sa-meta__item">ID:
-                                                            <span title="Click to copy product ID"
-                                                                class="st-copy"><?= $dm['madm'] ?></span>
-                                                        </li>
+                                        </td>
+                                        <td>
+                                            <div class="badge badge-sa-success">
+                                                Visible
+                                            </div>
+                                        </td>
+                                        <td><?= $dm['soluongsp'] ?></td>
+                                        <td> <a class="dropdown-item" href="?mod=categories&act=edit&id=<?= $dm['madm'] ?>" class="btn btn-success">Edit</a></td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?= $dm['madm'] ?>">
+                                                Delete
 
-                                                    </ul>
+                                            </button>
+                                        </td>
+                                        <!-- Modal -->
+                                    </tr>
+                                    <div class="modal fade" id="exampleModal<?= $dm['madm'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel<?= $dm['madm'] ?>" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title
+                                                    </h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <div class="badge badge-sa-success">
-                                            Visible
-                                        </div>
-                                    </td>
-                                    <td><?= $dm['soluongsp'] ?></td>
-                                    <td> <a class="dropdown-item" href="?mod=categories&act=edit&id=<?= $dm['madm'] ?>"
-                                            class="btn btn-success">Edit</a></td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal<?= $dm['madm'] ?>">
-                                            Delete
-
-                                        </button>
-                                    </td>
-                                    <!-- Modal -->
-                                </tr>
-                                <div class="modal fade" id="exampleModal<?= $dm['madm'] ?>" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel<?= $dm['madm'] ?>" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title
-                                                </h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Nếu bạn xóa danh mục, tất cả sản phẩm trong danh mục cũng xóa theo.
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                <a href="?mod=categories&act=delete&id=<?= $dm['madm'] ?>"
-                                                    class="btn btn-primary">Tiếp
-                                                    tục xóa</a>
+                                                <div class="modal-body">
+                                                    Nếu bạn xóa danh mục, tất cả sản phẩm trong danh mục cũng xóa theo.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <a href="?mod=categories&act=delete&id=<?= $dm['madm'] ?>" class="btn btn-primary">Tiếp
+                                                        tục xóa</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 <?php } ?>
 
 
                             </tbody>
                         </table>
-                        <input type="submit" value="Xóa danh mục" class="btn mt-5 btn-secondary" name="dele_categorie"
-                            id="deleteButton">
+                        <input type="submit" value="Xóa danh mục" class="btn mt-5 btn-secondary" name="dele_categorie" id="deleteButton">
                     </form>
                 </div>
 

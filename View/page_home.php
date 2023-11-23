@@ -1,64 +1,59 @@
 <!-- Carousel Start -->
-<div class="container-fluid mb-3">
-    <div class="row px-xl-5">
-        <div class="col-lg-8">
-            <div id="header-carousel" class="carousel slide carousel-fade mb-30 mb-lg-0" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#header-carousel" data-slide-to="1"></li>
-                    <li data-target="#header-carousel" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item position-relative active" style="height: 430px;">
-                        <img class="position-absolute w-100 h-100" src="img/product/bn1.jpg" style="object-fit: cover;">
-                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                            <div class="p-3" style="max-width: 700px;">
-                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Men Fashion
-                                </h1>
-                                <!-- <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem
-                                    magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p> -->
-                                <a class="btn btn-primary btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                                    href="#">Shop Now</a>
-                            </div>
-                        </div>
+<div class="h-50">
+    <div id="header-carousel" class="carousel slide carousel-fade mb-lg-0 mb-30" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#header-carousel" data-slide-to="1"></li>
+            <li data-target="#header-carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item position-relative active" style="height: 630px;">
+                <img class="position-absolute w-100 h-100" src="img/product/slider_1.webp" style="object-fit: cover;">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 700px;">
+                        <!-- <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Men Fashion -->
+                        </h1>
+                        <a class="btn btn-primary btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
+                            href="#">Shop Now</a>
                     </div>
-                    <div class="carousel-item position-relative" style="height: 430px;">
-                        <img class="position-absolute w-100 h-100" src="img/product/bn2.jpg" style="object-fit: cover;">
-                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                            <div class="p-3" style="max-width: 700px;">
-                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Women
-                                    Fashion</h1>
-                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem
-                                    magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                <a class="btn btn-primary btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                                    href="#">Shop Now</a>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="carousel-item position-relative" style="height: 630px;">
+                <img class="position-absolute w-100 h-100" src="img/product/banner1.png" style="object-fit: cover;">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 700px;">
+                        <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Women
+                            <!-- Fashion</h1> -->
+                            <!-- <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem
+                            magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p> -->
+                            <a class="btn btn-primary btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
+                                href="#">Shop Now</a>
                     </div>
-                    <div class="carousel-item position-relative" style="height: 430px;">
-                        <img class="position-absolute w-100 h-100" src="img/product/bn3.jpg" style="object-fit: cover;">
-                        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                            <div class="p-3" style="max-width: 700px;">
-                                <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Kids Fashion
-                                </h1>
-                                <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem
-                                    magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p>
-                                <a class="btn btn-primary btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                                    href="#">Shop Now</a>
+                </div>
+            </div>
+            <div class="carousel-item position-relative" style="height: 630px;">
+                <img class="position-absolute w-100 h-100" src="img/product/banner2.png" style="object-fit: cover;">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 700px;">
+                        <!-- <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Kids Fashion
+                        </h1>
+                        <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem
+                            magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p> -->
+                        <a class="btn btn-primary btn-outline-light py-2 px-10 mt-3 animate__animated animate__fadeInUp"
+                            href="#">Shop Now</a>
 
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+
+        <!-- <div class="col-lg-4">
             <div class="product-offer mb-30" style="height: 200px;">
                 <img class="img-fluid" src="img/product/bn4.png" alt="">
                 <div class="offer-text">
                     <h6 class="text-white text-uppercase">Save 20%</h6>
                     <h3 class="text-white mb-3">Special Offer</h3>
-                    <a href="">Shop Now</a>
+                    <a href="btn btn-primary">Shop Now</a>
                 </div>
             </div>
             <div class="product-offer mb-30" style="height: 200px;">
@@ -69,16 +64,15 @@
                     <a href="" class="btn btn-primary">Shop Now</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
-
 
 <!-- Carousel End -->
 
 
 <!-- Featured Start -->
-<div class="container-fluid pt-5">
+<div class="container-fluid pt-2">
     <div class="row px-xl-5 pb-3">
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
             <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
@@ -110,17 +104,17 @@
 
 
 <!-- Categories Start -->
-<div class="container-fluid pt-5">
+<div class="container-fluid pt-2">
     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span
             class="bg-secondary pr-3">Categories</span></h2>
     <div class="row px-xl-5 pb-3">
-        <?php for ($i = 0; $i < 8; $i++) {
+        <?php for ($i = 0; $i < 4; $i++) {
             $dm = $list_categories[$i]; ?>
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <a class="text-decoration-none" href="?mod=page&act=category&cat_id=<?= $dm['madm'] ?>">
                 <div class="cat-item img-zoom d-flex align-items-center mb-4">
                     <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                        <img class="img-fluid" src="img/categories/<?= $dm['anh'] ?>" alt="">
+                        <img class="img-fluid" src="img/product/<?= $dm['anh'] ?>" alt="">
                     </div>
                     <div class="flex-fill pl-3">
                         <h6><?= $dm['tendm'] ?></h6>
@@ -135,7 +129,7 @@
 
 
 <!-- Products Start -->
-<div class=" container-fluid pt-5 pb-3">
+<div class=" container-fluid pt-2 pb-3 bg-top">
     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Sản phẩm
             mới nhất</span></h2>
     <div class="row px-xl-5">
@@ -182,7 +176,7 @@
 
 
 <!-- Offer Start -->
-<div class="container-fluid pt-5 pb-3">
+<div class="container-fluid pt-2 pb-3 bg-top">
     <div class="row px-xl-5">
         <div class="col-md-6">
             <div class="product-offer mb-30" style="height: 300px;">
@@ -221,7 +215,7 @@
 
 
     <!-- Products Start -->
-    <div class="container-fluid pt-5 pb-3">
+    <div class="container-fluid pt-2 pb-3">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Sản phẩm
                 được quan tâm</span></h2>
         <div class="row px-xl-5">

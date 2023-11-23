@@ -108,10 +108,10 @@ function update_cart($qty)
 // }
 
 
-function addOrder($hoten, $tongtien, $matk)
+function addOrder($matk, $tongtien, $diachi)
 {
-    $sql2 = "INSERT INTO donhang (matk, tenkhachhang, tongtien) VALUES (?,?,?)";
-    return pdo_execute($sql2, $matk, $hoten, $tongtien);
+    $sql2 = "INSERT INTO donhang (matk, tongtien,diachi) VALUES (?,?,?)";
+    return pdo_execute($sql2, $matk, $tongtien, $diachi);
 }
 
 

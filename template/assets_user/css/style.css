@@ -19,7 +19,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #6d33ff;
+  --primary: #f06a72;
   --secondary: #F5F5F5;
   --success: #28a745;
   --info: #17a2b8;
@@ -86,8 +86,8 @@ p {
 
 abbr[title],
 abbr[data-original-title] {
-  text-decoration: underline;
-  text-decoration: underline dotted;
+  text-decoration: none;
+  text-decoration: none dotted;
   cursor: help;
   border-bottom: 0;
   text-decoration-skip-ink: none;
@@ -159,7 +159,7 @@ a {
 
 a:hover {
   color: #cdb5ad;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:not([href]):not([class]) {
@@ -486,13 +486,15 @@ mark,
   padding: 0.2em;
   background-color: #fcf8e3;
 }
-
+.bg-top{
+  background-color: #fdeced;
+}
 .list-unstyled {
   padding-left: 0;
   list-style: none;
 }
 .bg-main {
-  background-color: #cdb5ad ;}
+  background-color: #f06a72 ;}
 .list-inline {
   padding-left: 0;
   list-style: none;
@@ -600,8 +602,8 @@ pre code {
 .container-lg,
 .container-xl {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  /* padding-right: 15px;
+  padding-left: 15px; */
   margin-right: auto;
   margin-left: auto;
 }
@@ -633,8 +635,8 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  /* margin-right: -15px;
+  margin-left: -15px; */
 }
 
 .no-gutters {
@@ -656,8 +658,8 @@ pre code {
 .col-xl-auto {
   position: relative;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .col {
@@ -1780,7 +1782,7 @@ pre code {
 
 .table .thead-dark th {
   color: #fff;
-  background-color: #343a40;
+  background-color: #f06a72;
   border-color: #454d55;
 }
 
@@ -2924,11 +2926,11 @@ fieldset:disabled a.btn {
 
 .btn-link:hover {
   color: #e6b400;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .btn-link:focus, .btn-link.focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .btn-link:disabled, .btn-link.disabled {
@@ -4560,7 +4562,7 @@ input[type="button"].btn-block {
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {
@@ -9381,7 +9383,7 @@ a.text-dark:hover, a.text-dark:focus {
     box-shadow: none ;
   }
   a:not(.btn) {
-    text-decoration: underline;
+    text-decoration: none;
   }
   abbr[title]::after {
     content: " (" attr(title) ")";
@@ -9475,6 +9477,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .btn.btn-primary {
   color: #3D464D ;
+  border-radius: 10px;
 }
 
 .btn-square {
@@ -9502,14 +9505,17 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  padding: 20px 10px;
-  color: #F5F5F5;
+  padding: 20px 40px;
+  color:white;
+  font-weight: bold;
   outline: none;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: var(--primary);
+  color:#f06a72;
+  background-color: #fdeced;
+  border-radius: 10px;
 }
 
 @media (max-width: 991.98px) {
@@ -9553,7 +9559,7 @@ a.text-dark:hover, a.text-dark:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(61, 70, 77, 0.5);
+  /* background: rgba(61, 70, 77, 0.5); */
   z-index: 1;
 }
 
@@ -9641,6 +9647,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .product-item:hover {
   box-shadow: 0 0 30px #DDDDDD;
+  border: 4px solid #f06a72;
 }
 
 .product-item:hover .product-action {
@@ -9710,4 +9717,29 @@ a.text-dark:hover, a.text-dark:focus {
   100% {
     transform: translateY(-15px);
   }
+}
+
+
+.overlay-container {
+  position: relative;
+  /* height: 100vh; */
+  background: url('img/product/banner1.png') center/cover no-repeat;
+}
+
+.overlay-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(1,1,1,0.5); /* Màu của lớp phủ, bạn có thể điều chỉnh độ mờ bằng cách thay đổi giá trị alpha (0.5 ở đây) */
+}
+
+.content_footer{
+  position: relative;
+  z-index: 1; /* Để đảm bảo nội dung hiển thị trên lớp màu phủ */
+  color: #fff; /* Màu chữ cho nội dung */
+  padding: 20px;
+  text-align: center;
 }

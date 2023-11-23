@@ -38,14 +38,25 @@ if ($_GET['act']) {
 
             $viewName = 'page_detail';
             break;
-        case 'success':
-            $viewName = 'page_success';
-            break;
+
         case 'category':
             if (isset($_GET['cat_id'])) {
                 $data = getProductByCatID($_GET['cat_id']);
             }
             $viewName = 'page_category';
+            break;
+        case 'info':
+
+            $viewName = 'page_info';
+            break;
+        case 'success':
+            // echo "<pre>";
+            // print_r($_SESSION['cart']['buy']);
+            // echo "<pre>";
+            $dssp = $_SESSION['cart']['buy'];
+            unset($_SESSION['cart']);
+            $viewName = 'page_success';
+            // session_destroy();
             break;
         default:
             #404

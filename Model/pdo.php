@@ -5,7 +5,7 @@
  */
 function pdo_get_connection()
 {
-    $dburl = "mysql:host=localhost;dbname=demo-cpn;charset=utf8";
+    $dburl = "mysql:host=localhost;dbname=mypham;charset=utf8";
     $username = 'root';
     $password = '';
     $conn = new PDO($dburl, $username, $password);
@@ -32,6 +32,30 @@ function pdo_execute($sql)
         unset($conn);
     }
 }
+
+
+function pdo_execute_all($sql)
+{
+    $sql_args = array_slice(func_get_args(), 1);
+    try {
+        $conn = pdo_get_connection();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($sql_args);
+
+        // Return the result (assuming you want to fetch data)
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        // Handle the exception or rethrow it if necessary
+        throw $e;
+    } finally {
+        // Close statement and connection in the finally block
+        if (isset($stmt)) {
+            $stmt->closeCursor();
+        }
+        unset($stmt, $conn);
+    }
+}
+
 function pdo_execute_id($sql)
 {
     $sql_args = array_slice(func_get_args(), 1);

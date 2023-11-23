@@ -35,7 +35,7 @@
                     <a class="sa-sidebar__logo" href="#">
                         <!-- logo -->
                         <div class="sa-sidebar-logo">
-                            <span class="h5 mb-0 text-uppercase w-100"><img src="../img/product/logo2.png" alt="logo" class="w-25
+                            <span class="h5 mb-0 text-uppercase w-100"><img src="../img/product/logo.svg" alt="logo" class="w-25
                     "></span>
 
                         </div>
@@ -55,8 +55,8 @@
                                         <span class="sa-nav__title">Tổng quan</span>
                                     </a>
                                 </li>
-                                <li class="sa-nav__menu-item sa-nav__menu-item--has-icon">
-                                    <a href="admin.php?mod=product&act=show" class="sa-nav__link">
+                                <li class="sa-nav__menu-item sa-nav__menu-item--has-icon ">
+                                    <a href="admin.php?mod=product&act=show" class="sa-nav__link py-2">
                                         <span class="sa-nav__icon">
                                             <i class="fas fa-box"></i>
                                         </span>
