@@ -16,6 +16,7 @@ function comment_update($mabl, $ma_kh, $ma_sp, $noi_dung)
 
 function comment_delete($mabl)
 {
+
     $sql = "DELETE FROM binhluan WHERE mabl=?";
     if (is_array($mabl)) {
         foreach ($mabl as $mabl_item) {

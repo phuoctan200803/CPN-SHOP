@@ -4,8 +4,29 @@ include_once '../Model/order.php';
 if ($_GET['act']) {
     switch ($_GET['act']) {
         case 'show':
-            $listOrder = getAllOrder();
+            $status = 'chờ xác nhận';
+            $listStatus = ['chờ xác nhận', 'đang giao', 'đã giao', 'hủy'];
+            if (isset($_GET['status'])) {
+                foreach ($listStatus as $key => $value) {
+                    if ($key ==  $_GET['status']) {
+                        $status = $value;
+                    }
+                }
+            }
+            $listOrder = getOrderStatus($status);
             $viewName = 'page_order_home';
+
+
+            // Xác nhận đơn hàng
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // $name = $_POST['submit'];
+                // print_r($_POST);
+                // echo $id;
+                // return;
+                $id = $_POST['id'];
+                updateStatusOrder($id);
+            }
+
             break;
         case 'detail':
             if ($_GET['id']) {

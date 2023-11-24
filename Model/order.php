@@ -56,3 +56,19 @@ function getOrderByID($id)
 
     return pdo_query_one($sql, $id);
 }
+
+function getOrderStatus($status)
+{
+    $sql = "SELECT dh.*, tk.hoten 
+            FROM donhang dh 
+            INNER JOIN taikhoan tk ON dh.matk = tk.matk 
+            Where dh.trangthai=?
+            ORDER BY dh.madh ASC";  // Sắp xếp theo trường `madh` tăng dần
+
+    return pdo_query($sql, $status);
+}
+function updateStatusOrder($id)
+{
+    $sql = "UPDATE donhang SET trangthai='đang giao' WHERE madh=? ";
+    return pdo_execute($sql, $id);
+}

@@ -3,6 +3,7 @@
 include_once 'Model/pdo.php';
 include_once 'Model/user.php';
 include_once 'Model/product.php';
+include_once 'Model/cart.php';
 if ($_GET['act']) {
     $error = array();
     switch ($_GET['act']) {
@@ -177,13 +178,20 @@ if ($_GET['act']) {
             $id = $_GET['idOrder'];
             // echo $id;
             $dsdh = get_order_detail($id);
-            // echo "<pre>";
-            // print_r($dsdh);
-            // echo "<pre>";
-            // return;
+
             $viewName = 'page_orderDetail';
             break;
-
+        case "deleteOrder":
+            $id = $_GET['idOrder'];
+            $kq = checkOrder($id);
+            // print_r($kq);
+            if ($kq) {
+                deleteOrder($id);
+            } else {
+                $thongbao = "";
+            }
+            header("location:?mod=user&act=infoorder");
+            break;
 
         default:
             break;

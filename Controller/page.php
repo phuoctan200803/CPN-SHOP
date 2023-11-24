@@ -50,11 +50,15 @@ if ($_GET['act']) {
             $viewName = 'page_info';
             break;
         case 'success':
-            // echo "<pre>";
-            // print_r($_SESSION['cart']['buy']);
-            // echo "<pre>";
-            $dssp = $_SESSION['cart']['buy'];
+            if (isset($_SESSION['cart']['buy'])) {
+
+                $dssp = $_SESSION['cart']['buy'];
+            } else {
+                $dssp = [];
+            }
             unset($_SESSION['cart']);
+            // $_SESSION['cart']['buy'] = [];
+
             $viewName = 'page_success';
             // session_destroy();
             break;

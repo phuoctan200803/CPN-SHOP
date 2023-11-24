@@ -25,26 +25,31 @@
                                                         <th>Giá trị đơn hàng</th>
                                                         <!-- <th>Trạng thái thanh toán</th> -->
                                                         <th>Trạng thái giao hàng</th>
-                                                        <th>Chi tiết đơn hàng</th>
+                                                        <th>Chi tiết </th>
+                                                        <th>Hủy</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <!-- <tr>
-                                                        <td colspan="6">
-                                                            <p>Không có đơn hàng nào.</p>
-                                                        </td>
-                                                    </tr> -->
-                                                    <?php foreach ($dsdh as $item) { ?>
+                                                    <?php if (!empty($dsdh)) { ?>
+                                                        <?php foreach ($dsdh as $item) { ?>
+                                                            <tr>
+                                                                <td><?= $item['madh'] ?></td>
+                                                                <td><?= $item['ngaydathang'] ?></td>
+                                                                <td><?= $item['tongtien'] ?></td>
+                                                                <td><?= $item['trangthai'] ?></td>
+                                                                <td><a href="?mod=user&act=orderDetail&idOrder=<?= $item['madh'] ?>" class="btn btn-primary">Chi tiết</a></td>
+                                                                <td><a href="?mod=user&act=deleteOrder&idOrder=<?= $item['madh'] ?>" class="btn btn-primary">Hủy</a></td>
+                                                            </tr>
+                                                        <?php } ?>
+                                                    <?php } else { ?>
                                                         <tr>
-                                                            <td><?= $item['madh'] ?></td>
-                                                            <td><?= $item['ngaydathang'] ?></td>
-                                                            <td><?= $item['tongtien'] ?></td>
-                                                            <td><?= $item['trangthai'] ?></td>
-                                                            <td><a href="?mod=user&act=orderDetail&idOrder=<?= $item['madh'] ?>" class="btn btn-primary">Chiết</a></td>
+                                                            <td colspan="6">
+                                                                <p>Không có đơn hàng nào.</p>
+                                                            </td>
                                                         </tr>
                                                     <?php } ?>
-
                                                 </tbody>
+
                                             </table>
 
                                         </div>

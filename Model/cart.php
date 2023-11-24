@@ -165,3 +165,14 @@ function addOrderDetail($masp, $soluong, $giasp, $tongtien)
 //     }
 // }
 // ob_end_flush();
+function checkOrder($id)
+{
+    $sql = "SELECT * FROM donhang where madh=? AND trangthai='chờ xác nhận'";
+    return pdo_query($sql, $id);
+}
+
+function deleteOrder($id)
+{
+    $sql = "DELETE FROM donhang where madh=? ";
+    return pdo_execute($sql, $id);
+}

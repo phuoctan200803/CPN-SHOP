@@ -108,6 +108,7 @@ try {
     echo 'Message has been sent';
     // session_destroy();
     header("location:index.php?mod=page&act=success");
+    
     exit();
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
