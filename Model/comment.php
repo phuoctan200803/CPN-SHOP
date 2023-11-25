@@ -34,6 +34,7 @@ function comment_select_all()
 
 function comment_select_by_id($mabl)
 {
+    
     $sql = "SELECT * FROM binhluan WHERE mabl=?";
     return pdo_query_one($sql, $mabl);
 }
