@@ -94,7 +94,7 @@ function countProduct()
             SET d.soluongsp = (
                 SELECT SUM(soluong)
                 FROM sanpham AS s
-                WHERE s.madm = d.madm
+                WHERE s.madm = d.madm and s.xoa IS NULL
             )";
     return pdo_execute($sql);
 }

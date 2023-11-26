@@ -6,21 +6,17 @@ include_once '../Model/product.php';
 // include_once '../Model/user.php';
 if ($_GET['act']) {
     switch ($_GET['act']) {
-
         case 'show':
             $dataComment = comment_product();
             $viewName = 'page_home_comment';
             break;
         case "detail":
-
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
                 $detail_comment = comment_select_by_san_pham($_GET['id']);
                 $product = getProductByID($id);
             }
             $viewName = 'page_detail_comment';
-
-
             break;
         case "delete":
             $id = $_GET['id'];

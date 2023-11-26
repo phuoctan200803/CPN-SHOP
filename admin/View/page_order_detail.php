@@ -15,7 +15,8 @@ include_once '../Model/order.php';
                         </nav>
                         <!-- <h1 class="h3 m-0">Order #80294</h1> -->
                     </div>
-                    <div class="col-auto d-flex"><a href="#" class="btn btn-secondary me-3">Delete</a><a href="#" class="btn btn-primary">Edit</a></div>
+                    <div class="col-auto d-flex"><a href="#" class="btn btn-secondary me-3">Delete</a><a href="#"
+                            class="btn btn-primary">Edit</a></div>
                 </div>
             </div>
             <!-- <div class="sa-page-meta mb-5">
@@ -30,7 +31,8 @@ include_once '../Model/order.php';
                     </div>
                 </div>
             </div> -->
-            <div class="sa-entity-layout" data-sa-container-query="{&quot;920&quot;:&quot;sa-entity-layout--size--md&quot;}">
+            <div class="sa-entity-layout"
+                data-sa-container-query="{&quot;920&quot;:&quot;sa-entity-layout--size--md&quot;}">
                 <div class="sa-entity-layout__body">
                     <div class="sa-entity-layout__main">
                         <!-- <div class="sa-card-area"><textarea class="sa-card-area__area" rows="2"
@@ -44,33 +46,41 @@ include_once '../Model/order.php';
                                     </path>
                                 </svg></div>
                         </div> -->
-                        <div class="card mt-5">
+                        <div class="card">
                             <div class="card-body px-5 py-4 d-flex align-items-center justify-content-between">
                                 <h2 class="mb-0 fs-exact-18 me-4">Items</h2>
-                                <div class="text-muted fs-exact-14"><a href="#">Edit items</a></div>
+                                <!-- <div class="text-muted fs-exact-14"><a href="#">Edit items</a></div>s -->
                             </div>
                             <div class="table-responsive">
                                 <table class="sa-table">
                                     <tbody>
                                         <?php foreach ($detailOrder as $item) { ?>
-                                            <tr>
+                                        <tr>
 
-                                                <td class="min-w-20x">
-                                                    <div class="d-flex align-items-center"><img src="../img/product/<?= (getValueProduct($item['masp']))[0]['anhsp'] ?>" class="me-4" width="40" height="40" alt="" /><a href="app-product.html" class="text-reset"><?= (getValueProduct($item['masp']))[0]['tensp'] ?></a>
-                                                    </div>
-                                                </td>
-                                                <td class="text-end">
-                                                    <div class="sa-price"><span class="sa-price__integer"><?= $item['giasp'] ?></span><span class="sa-price__decimal">.00</span>
-                                                        <span class="sa-price__symbol">đ</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-end"><?= $item['soluong'] ?></td>
-                                                <td class="text-end">
-                                                    <div class="sa-price"><span class="sa-price__integer"><?= $item['tongtiensp'] ?></span><span class="sa-price__decimal">.00</span>
-                                                        <span class="sa-price__symbol">đ</span>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <td class="min-w-20x">
+                                                <div class="d-flex align-items-center"><img
+                                                        src="../img/product/<?= (getValueProduct($item['masp']))[0]['anhsp'] ?>"
+                                                        class="me-4" width="40" height="40" alt="" /><a
+                                                        href="app-product.html"
+                                                        class="text-reset"><?= (getValueProduct($item['masp']))[0]['tensp'] ?></a>
+                                                </div>
+                                            </td>
+                                            <td class="text-end">
+                                                <div class="sa-price"><span
+                                                        class="sa-price__integer"><?= $item['giasp'] ?></span><span
+                                                        class="sa-price__decimal">.00</span>
+                                                    <span class="sa-price__symbol">đ</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-end"><?= $item['soluong'] ?></td>
+                                            <td class="text-end">
+                                                <div class="sa-price"><span
+                                                        class="sa-price__integer"><?= $item['tongtiensp'] ?></span><span
+                                                        class="sa-price__decimal">.00</span>
+                                                    <span class="sa-price__symbol">đ</span>
+                                                </div>
+                                            </td>
+                                        </tr>
                                         <?php } ?>
 
 
@@ -80,7 +90,10 @@ include_once '../Model/order.php';
                                         <tr>
                                             <td colSpan="3">Total</td>
                                             <td class="text-end">
-                                                <div class="sa-price"><span class="sa-price__integer"><?php echo $inforOrder['tongtien']  ?></span><span class="sa-price__decimal">.00</span><span class="sa-price__decimal"></span><span class="sa-price__symbol">
+                                                <div class="sa-price"><span
+                                                        class="sa-price__integer"><?php echo $inforOrder['tongtien']  ?></span><span
+                                                        class="sa-price__decimal">.00</span><span
+                                                        class="sa-price__decimal"></span><span class="sa-price__symbol">
                                                         đ</span></div>
                                             </td>
                                         </tr>
@@ -96,7 +109,9 @@ include_once '../Model/order.php';
                                 <h2 class="fs-exact-16 mb-0">Khách hàng</h2>
                             </div>
                             <div class="card-body d-flex align-items-center pt-4">
-                                <div class="sa-symbol sa-symbol--shape--circle sa-symbol--size--lg"><img src="img/account/<?php echo $inforOrder['anh']  ?>" width="40" height="40" alt="" />
+                                <div class="sa-symbol sa-symbol--shape--circle sa-symbol--size--lg"><img
+                                        src="img/account/<?php echo $inforOrder['anh']  ?>" width="40" height="40"
+                                        alt="" />
                                 </div>
                                 <div class="ms-3 ps-2">
                                     <div class="fs-exact-14 fw-medium"><?php echo $inforOrder['hoten']  ?></div>

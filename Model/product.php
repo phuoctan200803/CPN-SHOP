@@ -22,18 +22,14 @@ function deleteProduct($masp)
     $sql = "UPDATE sanpham SET xoa=now() WHERE masp=?";
     if (is_array($masp)) {
         foreach ($masp as $ma) {
-            return pdo_execute($sql, $ma);
+            pdo_execute($sql, $ma);
         }
     } else {
-        return pdo_execute($sql, $masp);
+            pdo_execute($sql, $masp);
     }
 }
 
-function getAllProducts()
-{
-    $sql = "SELECT * FROM sanpham";
-    return pdo_query($sql);
-}
+
 
 function getProductByID($masp)
 {
@@ -107,6 +103,13 @@ function count_products()
 function get_product_limit($st, $stp)
 {
     $sql = "SELECT sp.*, dm.tendm FROM sanpham sp INNER JOIN danhmuc dm ON sp.madm = dm.madm WHERE sp.xoa IS NULL ORDER BY masp DESC LIMIT $st, $stp";
+    return pdo_query($sql);
+}
+
+ 
+function getAllProduct()
+{
+    $sql = "SELECT sp.*, dm.tendm FROM sanpham sp INNER JOIN danhmuc dm ON sp.madm = dm.madm WHERE sp.xoa IS NULL";
     return pdo_query($sql);
 }
 

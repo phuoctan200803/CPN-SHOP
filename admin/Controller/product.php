@@ -7,20 +7,22 @@ include_once '../Model/product.php';
 if ($_GET['act']) {
     switch ($_GET['act']) {
         case 'show':
-            if (isset($_GET['keyrword'])) {
-                $data = product_select_keyword($_POST['keyrword']);
-            }
-            if (!(isset($_SESSION['user']) && $_SESSION['user']['quyen'] == 'admin')) {
-                header('location:index.php');
-            }
-            $records = 15;
-            $soluong = count_products()['soluong'];
-            $sotrang = ceil($soluong / $records);
-            if (isset($_GET['page'])) {
-                $data = get_product_limit(($_GET['page'] - 1) * $records, $records);
-            } else {
-                $data = get_product_limit(0, $records);
-            }
+            // if (isset($_GET['keyrword'])) {
+            //     $data = product_select_keyword($_POST['keyrword']);
+            // }
+            // if (!(isset($_SESSION['user']) && $_SESSION['user']['quyen'] == 'admin')) {
+            //     header('location:index.php');
+            // }
+            // $records = 15;
+            // $soluong = count_products()['soluong'];
+            // $sotrang = ceil($soluong / $records);
+            // if (isset($_GET['page'])) {
+            //     $data = get_product_limit(($_GET['page'] - 1) * $records, $records);
+            // } else {
+            //     $data = get_product_limit(0, $records);
+            // }
+            $data = getAllProduct();
+
             $viewName = 'product_admin';
             break;
         case 'add':
@@ -60,6 +62,8 @@ if ($_GET['act']) {
             }
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                // print_r($_POST);
+                // return;
                 if (isset($_POST['item']) && is_array($_POST['item'])) {
                     $listId = $_POST['item'];
                     deleteProduct($listId);
