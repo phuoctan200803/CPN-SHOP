@@ -9,7 +9,6 @@ if ($_GET['act']) {
         case 'show':
             $data['account'] = user_select_all();
             $viewName = 'page_home_account';
-
             break;
         case 'add':
             if (isset($_POST['sub_account'])) {

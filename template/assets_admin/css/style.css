@@ -16,7 +16,7 @@ body {
     --sa-scheme-light--opposite-color: #212529;
     --sa-scheme-dark--main-color: #3d464d;
     --sa-scheme-dark--opposite-color: #fff;
-    --sa-scheme-theme--main-color: #4e4114;
+    --sa-scheme-theme--main-color: #e6bb20;
     --sa-scheme-theme--opposite-color: #3d464d
 }
 
@@ -628,6 +628,11 @@ body {
 
 .btn {
     box-shadow: 0 0 0 0 #fff, 0 0 0 0 #3d464d
+}
+
+.btn:active {
+    background-color: #3498db; /* Màu nền mới khi nút được nhấn */
+    color: #fff; /* Màu chữ mới khi nút được nhấn */
 }
 
 .btn-check:focus+.btn,

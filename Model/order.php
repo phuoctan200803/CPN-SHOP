@@ -67,8 +67,24 @@ function getOrderStatus($status)
 
     return pdo_query($sql, $status);
 }
-function updateStatusOrder($id)
+function updateStatusOrder($id, $status)
 {
-    $sql = "UPDATE donhang SET trangthai='đang giao' WHERE madh=? ";
-    return pdo_execute($sql, $id);
+    $sql = "UPDATE donhang SET trangthai=? WHERE madh=? ";
+    return pdo_execute($sql, $status, $id);
+}
+
+
+function updateProductQuantity($id, $qty)
+{
+    $sql = "SELECT soluong FROM sanpham  WHERE masp=? ";
+    $currentQuantity = pdo_query_value($sql, $id);
+    if ($currentQuantity !== false) {
+        if ($currentQuantity >= $qty) {
+            $sql = "UPDATE sanpham SET soluong=$currentQuantity-? WHERE masp=? ";
+            return pdo_execute($sql, $qty, $id);
+        } else {
+            return 0;
+        }
+    }
+    return false;
 }
