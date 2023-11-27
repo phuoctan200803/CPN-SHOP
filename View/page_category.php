@@ -63,7 +63,7 @@
                     color</span></h5>
             <div class="bg-light p-4 mb-30">
 
-                <a href="#"> <img src="img/account/banner.png" alt="" style="object-fit: cover; max-width: 350px;"></a>
+                <!-- <a href="#"> <img src="img/account/banner.png" alt="" style="object-fit: cover; max-width: 350px;"></a> -->
 
             </div>
             <!-- Color End -->
@@ -121,8 +121,7 @@
                         </div>
                         <div class="ml-2">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-light dropdown-toggle"
-                                    data-toggle="dropdown">Sorting</button>
+                                <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Sorting</button>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="#">Latest</a>
                                     <a class="dropdown-item" href="#">Popularity</a>
@@ -130,8 +129,7 @@
                                 </div>
                             </div>
                             <div class="btn-group ml-2">
-                                <button type="button" class="btn btn-sm btn-light dropdown-toggle"
-                                    data-toggle="dropdown">Showing</button>
+                                <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Showing</button>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="#">10</a>
                                     <a class="dropdown-item" href="#">20</a>
@@ -145,40 +143,36 @@
                 <?php if (!empty($data)) {
                     foreach ($data as $item) {
                 ?>
-                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                        <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
 
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/product/<?= $item['anhsp'] ?>"
-                                alt="<?= $item['masp'] ?>" style="height: 400px;">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square"
-                                    href="?mod=cart&act=add&id=<?= $item['masp'] ?>"><i
-                                        class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square"
-                                    href="?mod=page&act=detail&id=<?= $item['masp'] ?>"><i class="fa fa-search"></i></a>
+                            <div class="product-item bg-light mb-4">
+                                <div class="product-img position-relative overflow-hidden">
+                                    <img class="img-fluid w-100" src="img/product/<?= $item['anhsp'] ?>" alt="<?= $item['masp'] ?>" style="height: 400px;">
+                                    <div class="product-action">
+                                        <a class="btn btn-outline-dark btn-square" href="?mod=cart&act=add&id=<?= $item['masp'] ?>"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                                        <a class="btn btn-outline-dark btn-square" href="?mod=page&act=detail&id=<?= $item['masp'] ?>"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center py-4">
+                                    <a class="h6 text-decoration-none text-truncate" href=""><?= $item['tensp'] ?></a>
+                                    <div class="d-flex align-items-center justify-content-center mt-2">
+                                        <h5><?= number_format($item['giakhuyenmai']) ?> đ</h5>
+                                        <h6 class="text-muted ml-2"><del><?= number_format($item['gia']) ?> đ</del>
+                                        </h6>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-center mb-1">
+                                        <small class="fa fa-star text-primary mr-1"></small>
+                                        <small class="fa fa-star text-primary mr-1"></small>
+                                        <small class="fa fa-star text-primary mr-1"></small>
+                                        <small class="fa fa-star text-primary mr-1"></small>
+                                        <small class="fa fa-star text-primary mr-1"></small>
+                                        <small>(99)</small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href=""><?= $item['tensp'] ?></a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5><?= number_format($item['giakhuyenmai']) ?> đ</h5>
-                                <h6 class="text-muted ml-2"><del><?= number_format($item['gia']) ?> đ</del>
-                                </h6>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small>(99)</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <?php }
                 } ?>
                 <div class="col-12">
@@ -190,9 +184,8 @@
                                 </a>
                             </li>
                             <?php for ($i = 1; $i <= 5; $i++) { ?>
-                            <li class="page-item"><a class="page-link"
-                                    href="?mod=product&act=search&search=<?= $keyword ?>&page=<?= $i ?>"><?= $i ?></a>
-                            </li>
+                                <li class="page-item"><a class="page-link" href="?mod=product&act=search&search=<?= $keyword ?>&page=<?= $i ?>"><?= $i ?></a>
+                                </li>
                             <?php } ?>
 
                             <li class=" page-item">

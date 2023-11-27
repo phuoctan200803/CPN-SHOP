@@ -16,8 +16,14 @@
                                 <div class="dashboard">
 
                                     <div class="recent-orders">
+                                        <?php if (!empty($thongbao)) { ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            <?= $thongbao; ?>
+                                        </div>
+                                        <?php } ?>
                                         <div class="table-responsive tab-all" style="overflow-x:auto;">
-                                            <table class="table table-light table-borderless table-hover text-center mb-0 bg-top">
+                                            <table
+                                                class="table table-light table-borderless table-hover text-center mb-0 bg-top">
                                                 <thead class="thead-dark">
                                                     <tr>
                                                         <th>Sản phẩm</th>
@@ -30,21 +36,25 @@
                                                     <?php
                                                     foreach ($dsdh as $item) {
                                                     ?>
-                                                        <tr>
-                                                            <td class="align-middle" style="display: flex;justify-content: space-between;"><img src="img/product/<?= $item['anhsp'] ?>" alt="" style="width: 50px;"><span><?= $item['tensp'] ?></span>
-                                                            </td>
-                                                            <td class="align-middle">
-                                                                <?= number_format($item['giasp']) ?> đ</td>
-                                                            <td class="align-middle">
-                                                                <div class="input-group quantity mx-auto text-center" style="width: 100px;">
-                                                                    <?= $item['soluong'] ?>
-                                                                </div>
-                                                            </td>
-                                                            <td class="align-middle">
-                                                                <?= number_format($item['tongtiensp']) ?> đ</td>
-                                                            <!-- <td class="align-middle"><a href="?mod=cart&act=delete&id=<?php echo $item['masp']; ?>"><i class="fa fa-times p-2 btn-danger"></i></a></td> -->
+                                                    <tr>
+                                                        <td class="align-middle"
+                                                            style="display: flex;justify-content: space-between;"><img
+                                                                src="img/product/<?= $item['anhsp'] ?>" alt=""
+                                                                style="width: 50px;"><span><?= $item['tensp'] ?></span>
+                                                        </td>
+                                                        <td class="align-middle">
+                                                            <?= number_format($item['giasp']) ?> đ</td>
+                                                        <td class="align-middle">
+                                                            <div class="input-group quantity mx-auto text-center"
+                                                                style="width: 100px;">
+                                                                <?= $item['soluong'] ?>
+                                                            </div>
+                                                        </td>
+                                                        <td class="align-middle">
+                                                            <?= number_format($item['tongtiensp']) ?> đ</td>
+                                                        <!-- <td class="align-middle"><a href="?mod=cart&act=delete&id=<?php echo $item['masp']; ?>"><i class="fa fa-times p-2 btn-danger"></i></a></td> -->
 
-                                                        </tr>
+                                                    </tr>
 
                                                     <?php
                                                     }
@@ -83,17 +93,22 @@
                                 <p><i class="fa fa-user"></i><a href="?mod=user&act=info" class="ml-2">Thông tin tài
                                         khoản
                                     </a> </p>
-                                <p><i class="fa fa-clipboard-check"></i><a href="?mod=user&act=infoorder" class="ml-2">Thông
+                                <p><i class="fa fa-clipboard-check"></i><a href="?mod=user&act=infoorder"
+                                        class="ml-2">Thông
                                         tin
                                         đơn
                                         hàng </a></p>
-                                <p><i class="fab fa-500px"></i><a href="?mod=user&act=change_pass" class="ml-2"> Đổi mật
+                                <p><i class="fab fa-500px"></i><a href="?mod=user&act=change_pass" class="ml-2"> Đổi
+                                        mật
                                         khẩu
                                     </a></p>
-                                <p><i class="fab fa-500px"></i><a href="?mod=user&act=edit&id=<?php echo $_SESSION['user']['matk'] ?>" class="ml-2">Cập nhật
+                                <p><i class="fab fa-500px"></i><a
+                                        href="?mod=user&act=edit&id=<?php echo $_SESSION['user']['matk'] ?>"
+                                        class="ml-2">Cập nhật
                                         tài khoản
                                     </a></p>
-                                <p><i class="fa fa-code font-some" aria-hidden="true"></i> <a href="?mod=user&act=logout" class="ml-2"> Đăng
+                                <p><i class="fa fa-code font-some" aria-hidden="true"></i> <a
+                                        href="?mod=user&act=logout" class="ml-2"> Đăng
                                         xuất
                                     </a></p>
                             </div>

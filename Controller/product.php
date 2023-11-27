@@ -21,6 +21,8 @@ if ($_GET['act']) {
             include 'View/template_header.php';
             include 'View/page_category.php';
             include 'View/template_footer.php';
+            $viewName = 'page_category';
+            // $viewName = 'user_changePass';
             break;
 
         case 'filter':
