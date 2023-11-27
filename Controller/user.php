@@ -4,6 +4,7 @@ include_once 'Model/pdo.php';
 include_once 'Model/user.php';
 include_once 'Model/product.php';
 include_once 'Model/cart.php';
+include_once 'Model/order.php';
 if ($_GET['act']) {
     $error = array();
     switch ($_GET['act']) {
@@ -39,7 +40,6 @@ if ($_GET['act']) {
                     save_file('userImg', 'img/account/');
                 }
                 if (empty($error)) {
-
                     $kq = signUp($username, $_POST['birthday'], $email, $password);
                     header('location:?mod=user&act=login');
                 }
@@ -170,9 +170,12 @@ if ($_GET['act']) {
             $viewName = 'page_info';
             break;
         case "infoorder":
-            $id = $_SESSION['user']['matk'];
-            $dsdh = get_one_order($id);
-            $viewName = 'page_infoorder';
+            if (isset($_SESSION['user'])) {
+                $id = $_SESSION['user']['matk'];
+                $dsdh = get_one_order($id);
+                $viewName = 'page_infoorder';
+            }
+
             break;
         case "orderDetail":
             $id = $_GET['idOrder'];
@@ -183,12 +186,13 @@ if ($_GET['act']) {
             break;
         case "deleteOrder":
             $id = $_GET['idOrder'];
+            $thongbao = "";
             $kq = checkOrder($id);
             // print_r($kq);
             if ($kq) {
-                deleteOrder($id);
+                updateStatusOrder($id, "hủy");
             } else {
-                $thongbao = "";
+                $thongbao = "Đơn đã được xác nhận không được xác nhận";
             }
             header("location:?mod=user&act=infoorder");
             break;

@@ -20,7 +20,6 @@ if ($_GET['act']) {
             break;
         case 'detail':
             include_once "Model/comment.php";
-
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
             }
@@ -35,10 +34,8 @@ if ($_GET['act']) {
             $countComment = countComment($id);
             $listComment = getCommentLimit($id, 0, 5);
             $listProductRandDom = get_productRandDom($item['madm']);
-
             $viewName = 'page_detail';
             break;
-
         case 'category':
             if (isset($_GET['cat_id'])) {
                 $data = getProductByCatID($_GET['cat_id']);

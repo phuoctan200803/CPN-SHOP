@@ -62,7 +62,7 @@
                 </div>
                 <h3 class="font-weight-semi-bold mb-4"><?= number_format($item['giakhuyenmai']) ?> đ</h3>
                 <p class="mb-4"><?= $item['motangan'] ?></p>
-                <div class="d-flex mb-3">
+                <!-- <div class="d-flex mb-3">
                     <strong class="text-dark mr-3">Sizes:</strong>
                     <form>
                         <div class="custom-control custom-radio custom-control-inline">
@@ -111,7 +111,7 @@
                             <label class="custom-control-label" for="color-5">Green</label>
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <div class="d-flex align-items-center mb-4 pt-2">
                     <div class="input-group quantity mr-3" style="width: 130px;">
                         <div class="input-group-btn">

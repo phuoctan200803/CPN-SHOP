@@ -32,7 +32,7 @@ $list_Cate = category_select_all();
                         ?>
                     </div>
                 </div>
-                <div class="btn-group mx-2">
+                <!-- <div class="btn-group mx-2">
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle"
                         data-toggle="dropdown">USD</button>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -40,8 +40,8 @@ $list_Cate = category_select_all();
                         <button class="dropdown-item" type="button">GBP</button>
                         <button class="dropdown-item" type="button">CAD</button>
                     </div>
-                </div>
-                <div class="btn-group">
+                </div> -->
+                <!-- <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-light dropdown-toggle"
                         data-toggle="dropdown">EN</button>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -49,7 +49,7 @@ $list_Cate = category_select_all();
                         <button class="dropdown-item" type="button">AR</button>
                         <button class="dropdown-item" type="button">RU</button>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="d-inline-flex align-items-center d-block d-lg-none">
                 <a href="" class="btn px-0 ml-2">
@@ -67,10 +67,10 @@ $list_Cate = category_select_all();
     </div>
     <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
         <div class="col-lg-4">
-            <a href="index.php" class="text-decoration-none">
+            <!-- <a href="index.php" class="text-decoration-none">
                 <span class="h1 text-uppercase text-primary bg-dark px-2">CPN</span>
                 <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
-            </a>
+            </a> -->
         </div>
         <div class="col-lg-4 col-6 text-left">
             <form action="index.php?mod=product&act=search" method="post">
