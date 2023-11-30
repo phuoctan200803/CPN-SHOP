@@ -9,7 +9,8 @@
     <!-- icon -->
     <link rel="icon" type="image/png" href="../template/assets_admin/images//favicon.png" />
     <!-- fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" />
     <!-- css -->
     <link rel="stylesheet" href="../template/assets_admin/vendor/bootstrap/css/bootstrap.ltr.css" />
     <link rel="stylesheet" href="../template/assets_admin/vendor/highlight.js/styles/github.css" />
@@ -35,7 +36,8 @@
                     <a class="sa-sidebar__logo" href="#">
                         <!-- logo -->
                         <div class="sa-sidebar-logo">
-                            <span class="h5 mb-0 text-uppercase w-100"><img src="../img/product/logo.svg" alt="logo" class="w-25
+                            <span class="h5 mb-0 text-uppercase w-100"><img src="../img/product/logo.svg" alt="logo"
+                                    class="w-25
                     "></span>
 
                         </div>
@@ -128,7 +130,8 @@
                     <div class="mx-auto"></div>
 
                     <div class="dropdown sa-toolbar__item">
-                        <button class="sa-toolbar-user" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-bs-offset="0,1" aria-expanded="false">
+                        <button class="sa-toolbar-user" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                            data-bs-offset="0,1" aria-expanded="false">
                             <span class="sa-toolbar-user__avatar sa-symbol sa-symbol--shape--rounded">
                                 <img src="../img/account/image.jpg" width="64" height="64">
                             </span>

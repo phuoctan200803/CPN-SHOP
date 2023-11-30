@@ -40,7 +40,7 @@ if ($_GET['act']) {
         case 'update':
             if (isset($_POST['btn_update_cart'])) {
                 update_cart($_POST['qty']);
-                print_r($_POST['qty']);
+                // print_r($_POST['qty']);
                 header("location:index.php?mod=cart&act=show");
             }
             break;
@@ -82,7 +82,10 @@ if ($_GET['act']) {
                     }
                 }
             }
-            include_once "View/sendmail.php";
+
+            header("location:index.php?mod=page&act=success");
+
+            // include_once "View/sendmail.php";
 
             break;
         case 'success':

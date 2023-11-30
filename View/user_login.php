@@ -25,7 +25,8 @@
                     <div class="control-group mb-3">
                         <input type="text" class="form-control" id="email" placeholder="Your Email" name="email"
                             value="<?php if (isset($email)) {
-                                                                                                                            echo $email;                                                                                                                        } ?>">
+                                                                                                                            echo $email;
+                                                                                                                        } ?>">
                     </div>
                     <?php if (isset($error) && !empty($error['email'])) : ?>
                     <div class="alert alert-warning"><?php echo  $error['email'] ?></div>
@@ -42,7 +43,7 @@
                     endif;
                     unset($error['password']);
                     ?>
-                    <div>
+                    <div class="d-flex justify-content-between align-items-center">
                         <input type="submit" name="submit-login" class="btn btn-primary py-2 px-4" value="Sign In">
                         <a href="?mod=user&act=forgot" class="mr-0 float-end">Quên mật khẩu</a>
                     </div>

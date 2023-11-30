@@ -1,13 +1,14 @@
 <?php
 
-function add_cart($id)
+function add_cart($id, $qty = 1)
 {
     $item = getProductByID($id);
-    $qty = 1;
+    $qty = (isset($qty) && is_numeric($qty) && $qty > 0) ? $qty : 1;
     if ($item && is_numeric($item['giakhuyenmai']) && $item['giakhuyenmai'] > 0) {
         // Kiểm tra và xử lý giá trị $qty để đảm bảo là số nguyên dương
         if (isset($_SESSION['cart']['buy']) && array_key_exists($id, $_SESSION['cart']['buy'])) {
-            $qty = $_SESSION['cart']['buy'][$id]['qty']++;
+            $qty = $_SESSION['cart']['buy'][$id]['qty'] + $qty;
+            $_SESSION['cart']['buy'][$id]['qty'] = $qty;
             $_SESSION['cart']['buy'][$id]['sub_total'] = $_SESSION['cart']['buy'][$id]['qty'] * $item['giakhuyenmai'];
         } else {
             $_SESSION['cart']['buy'][$id] = [

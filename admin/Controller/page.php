@@ -11,6 +11,10 @@ if ($_GET['act']) {
             $data['thong_ke'] = thong_ke_hang_hoa();
             $data['don_hang'] = thong_ke_don_hang();
             $data['dh_thang'] = thong_ke_don_hang_theo_thang();
+            $data['comment'] = countAllComment();
+            $dsdh = getRecentOrder(8);
+            // print_r($dsdh);
+            // return;
             $viewName = 'page_dashboard';
             break;
         default:

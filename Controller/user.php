@@ -72,8 +72,6 @@ if ($_GET['act']) {
                     } else {
                         header('location:index.php');
                     }
-                } else {
-                    $thongbao = "Email hoặc mật khẩu không đúng";
                 }
             }
 

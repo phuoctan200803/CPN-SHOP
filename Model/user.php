@@ -145,8 +145,8 @@ function validatePassword($password)
 {
     if (empty($password)) {
         return "Không được để trống trường Password";
-    // } elseif (!is_password($password)) {
-    //     return "Password sử dụng chữ cái, chữ số, và ký tự đặc biệt, bắt đầu ký tự viết hoa và có 6 đến 32 ký tự";
+    } elseif (!is_password($password)) {
+        return "Password sử dụng chữ cái, chữ số, và ký tự đặc biệt, bắt đầu ký tự viết hoa và có 6 đến 32 ký tự";
     } else {
         $hashedPassword = md5($password);
         return $hashedPassword;
