@@ -3,6 +3,7 @@
 include_once 'Model/product.php';
 include_once 'Model/categories.php';
 include_once 'Model/pdo.php';
+include_once 'Model/cart.php';
 if ($_GET['act']) {
     switch ($_GET['act']) {
         case 'home':
@@ -34,6 +35,12 @@ if ($_GET['act']) {
             $countComment = countComment($id);
             $listComment = getCommentLimit($id, 0, 5);
             $listProductRandDom = get_productRandDom($item['madm']);
+
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $id = key($_POST);
+                $qty = current($_POST);
+                add_cart($id, $qty);
+            }
             $viewName = 'page_detail';
             break;
         case 'category':
