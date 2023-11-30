@@ -75,10 +75,16 @@
                                         nhận</button>
                                     <button type="submit" name="cancel" value="<?= $item['madh'] ?>"
                                         class="btn btn-danger">Hủy</button>
-                                    <?php } else if ($item['trangthai'] == "đã giao") { ?>
-                                    <span class="btn btn-success"><?= $item['trangthai'] ?></span>
                                     <?php } else if ($item['trangthai'] == "đang giao") { ?>
                                     <span class="btn btn-info"><?= $item['trangthai'] ?></span>
+                                    <button type="submit" name="subsuccess" value="<?= $item['madh'] ?>"
+                                        class="btn btn-success">Xác
+                                        nhận</button>
+
+
+                                    <?php } else if ($item['trangthai'] == "đã giao") { ?>
+                                    <span class="btn btn-success"><?= $item['trangthai'] ?></span>
+
                                     <?php } else if ($item['trangthai'] == "hủy") { ?>
                                     <span class="btn btn-danger"><?= $item['trangthai'] ?></span>
                                     <?php } ?>

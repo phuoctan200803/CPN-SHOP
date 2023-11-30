@@ -27,6 +27,8 @@ if ($_GET['act']) {
                     }
                 } elseif (isset($_POST['cancel'])) {
                     updateStatusOrder($_POST['cancel'], 'hủy');
+                } elseif (isset($_POST['subsuccess'])) {
+                    updateStatusOrder($_POST['subsuccess'], 'đã giao');
                 }
             }
 

@@ -112,6 +112,7 @@
                         </div>
                     </form>
                 </div> -->
+                <form action="" method="POST"></form>
                 <div class="d-flex align-items-center mb-4 pt-2">
                     <div class="input-group quantity mr-3" style="width: 130px;">
                         <div class="input-group-btn">
@@ -119,12 +120,18 @@
                                 <i class="fa fa-minus"></i>
                             </button>
                         </div>
-                        <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
+                        <input type="number" name="qty" class="form-control bg-secondary border-0 text-center"
+                            value="1" />
+
+                        <!-- <input type="number" class="form-control form-control-sm bg-secondary border-0 text-center"
+                            name="qty[<?php echo $item['masp']; ?>]" value="<?= $item['qty'] ?>" min="1" max="10"> -->
                         <div class="input-group-btn">
                             <button class="btn btn-primary btn-plus">
                                 <i class="fa fa-plus"></i>
                             </button>
                         </div>
+
+
                     </div>
                     <a href="?mod=cart&act=add&page=detail&id=<?= $item['masp'] ?>"><button
                             class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To
