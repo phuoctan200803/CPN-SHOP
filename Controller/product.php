@@ -17,10 +17,10 @@ if ($_GET['act']) {
             } else {
                 $data = get_products_with_keyword_and_limit($keyword, 0, $records);
             }
-            include 'View/template_head.php';
-            include 'View/template_header.php';
-            include 'View/page_category.php';
-            include 'View/template_footer.php';
+            // include 'View/template_head.php';
+            // include 'View/template_header.php';
+            // include 'View/page_category.php';
+            // include 'View/template_footer.php';
             $viewName = 'page_category';
             // $viewName = 'user_changePass';
             break;
@@ -50,6 +50,9 @@ if ($_GET['act']) {
             }
             break;
         default:
+            $viewName = '404';
+
             break;
     }
+    include 'View/user_layout.php';
 }

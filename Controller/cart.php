@@ -92,6 +92,7 @@ if ($_GET['act']) {
             $viewName = "page_success";
             break;
         default:
+            $viewName = '404';
             break;
     }
     include_once 'View/user_layout.php';
