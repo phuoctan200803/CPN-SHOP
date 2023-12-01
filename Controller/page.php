@@ -67,7 +67,7 @@ if ($_GET['act']) {
             // session_destroy();
             break;
         default:
-            #404
+            $viewName = '404';
             break;
     }
     include_once 'View/user_layout.php';
