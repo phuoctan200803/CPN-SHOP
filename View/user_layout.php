@@ -151,7 +151,7 @@ $list_Cate = category_select_all();
                 <div class="collapse navbar-collapse justify-content-between text-white" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0 text-white">
                         <a href="index.php" class="nav-item nav-link text-white">Trang chủ</a>
-                        <a href="index.php" class="nav-item nav-link">Giới thiệu</a>
+                        <a href="?mod=page&act=about" class="nav-item nav-link">Giới thiệu</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i
                                     class="fa fa-angle-down mt-1"></i></a>
@@ -160,7 +160,7 @@ $list_Cate = category_select_all();
                                 <a href="?mod=cart&act=checkout" class="dropdown-item">Checkout</a>
                             </div>
                         </div>
-                        <a href="index.php?mod=page&act=contact" class="nav-item nav-link">Liên hệ</a>
+                        <a href="?mod=page&act=contact" class="nav-item nav-link">Liên hệ</a>
                     </div>
                     <div class="navbar-nav py-0 d-none d-lg-block">
                         <a href="" class="btn px-0">
