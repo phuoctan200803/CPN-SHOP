@@ -30,7 +30,7 @@ function update_info_cart()
         $num_order = 0;
         $total = 0;
         foreach ($_SESSION['cart']['buy'] as $item) {
-            $num_order += $item['qty'];
+            $num_order++;
             $total += $item['sub_total'];
         }
         $_SESSION['cart']['info'] = array(

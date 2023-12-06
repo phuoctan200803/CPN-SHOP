@@ -18,6 +18,8 @@ if ($_GET['act']) {
             $viewName = 'page_dashboard';
             break;
         default:
+            $viewName = '404';
+
             break;
     }
     include_once "View/admin_layout.php";

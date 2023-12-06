@@ -8,20 +8,19 @@ include_once 'Model/product.php';
 if ($_GET['act']) {
     switch ($_GET['act']) {
         case 'search':
-            $records = 9;
-            $soluong = count_products()['soluong'];
-            $sotrang = ceil($soluong / $records);
-            $keyword = isset($_POST['keyword']) ? $_POST['keyword'] : '';
-            if (isset($_GET['page'])) {
-                $data = get_products_with_keyword_and_limit($keyword, ($_GET['page'] - 1) * $records, $records);
-            } else {
-                $data = get_products_with_keyword_and_limit($keyword, 0, $records);
-            }
-            // include 'View/template_head.php';
-            // include 'View/template_header.php';
-            // include 'View/page_category.php';
-            // include 'View/template_footer.php';
-            $viewName = 'page_category';
+
+            $productsPerPage = 9;
+            $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+            $start = ($currentPage - 1) * $productsPerPage;
+            $_SESSION['keyword'] = ($_POST['keyword']);
+            $data = get_products_with_keyword_and_limit($_SESSION['keyword'], $start, $productsPerPage);
+            $totalProducts = count_products_with_keyword($_SESSION['keyword']);
+            // echo $totalProducts;
+            // return;
+            $totalPages = ceil($totalProducts / $productsPerPage);
+
+
+            $viewName = 'page_search';
             // $viewName = 'user_changePass';
             break;
 

@@ -25,7 +25,7 @@ function deleteProduct($masp)
             pdo_execute($sql, $ma);
         }
     } else {
-            pdo_execute($sql, $masp);
+        pdo_execute($sql, $masp);
     }
 }
 
@@ -106,7 +106,7 @@ function get_product_limit($st, $stp)
     return pdo_query($sql);
 }
 
- 
+
 function getAllProduct()
 {
     $sql = "SELECT sp.*, dm.tendm FROM sanpham sp INNER JOIN danhmuc dm ON sp.madm = dm.madm WHERE sp.xoa IS NULL";
@@ -127,25 +127,33 @@ function get_productRandDom($madm)
 }
 
 
-function getProductByCatID($madm)
+function getProductByCatID($madm, $start, $page)
 {
-    $sql = "SELECT * FROM sanpham WHERE madm=?";
+    $sql = "SELECT * FROM sanpham WHERE madm=? limit $start,$page";
     return pdo_query($sql, $madm);
+}
+function CountProductByCatID($madm)
+{
+    $sql = "SELECT COUNT(*) FROM sanpham WHERE madm=?";
+    return pdo_query_value_one($sql, $madm);
 }
 
 
 function get_products_with_keyword_and_limit($keyword, $st, $stp)
 {
-    $sql = "SELECT sp.*, dm.tendm 
+    $sql = "SELECT sp.*, dm.tendm
             FROM sanpham sp 
             INNER JOIN danhmuc dm ON sp.madm = dm.madm 
-            WHERE sp.tensp LIKE ? OR dm.tendm LIKE ? 
+            WHERE sp.tensp LIKE ? 
             ORDER BY sp.masp DESC 
             LIMIT $st, $stp";
-
-    return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
+    return pdo_query($sql, '%' . $keyword . '%');
 }
-
+function count_products_with_keyword($keyword)
+{
+    $countSql = "SELECT COUNT(*) as total FROM sanpham WHERE tensp LIKE ? OR madm IN (SELECT madm FROM danhmuc WHERE tendm LIKE ?)";
+    return pdo_query_value_one($countSql, '%' . $keyword . '%', '%' . $keyword . '%');
+}
 
 
 function save_file($fieldname, $target_dir)

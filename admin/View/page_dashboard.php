@@ -196,6 +196,9 @@
                                                                         <?php   } ?>
                                                                     </div>
                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                                 <!-- <td><img src="vendor/flag-icons/24/IT.png" class="sa-language-icon d-block" alt="" title="Italy" />
                                                                     </td> -->

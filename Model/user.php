@@ -38,11 +38,11 @@ function checkMail($email)
 }
 
 
-function signUp($name, $birthday, $emai, $password)
+function signUp($name, $email, $password)
 {
 
-    $sql = "insert into taikhoan(`hoten`,`ngaysinh`,`email`,`matkhau`) value (?,?,?,?)";
-    return pdo_execute($sql, $name, $birthday, $emai, $password);
+    $sql = "insert into taikhoan(`hoten`,`email`,`matkhau`) value (?,?,?)";
+    return pdo_execute($sql, $name, $email, $password);
 }
 
 

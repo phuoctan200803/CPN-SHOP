@@ -36,7 +36,25 @@
                                                                 <td><?= $item['madh'] ?></td>
                                                                 <td><?= $item['ngaydathang'] ?></td>
                                                                 <td><?= $item['tongtien'] ?></td>
-                                                                <td><?= $item['trangthai'] ?></td>
+                                                                <td><?php if ($item['trangthai'] == "chờ xác nhận") { ?>
+
+                                                                        <div class="badge bg-warning text-dark">
+                                                                            <?= $item['trangthai'] ?>
+                                                                        <?php  } else if ($item['trangthai'] == "đang giao") { ?>
+                                                                            <div class="badge bg-info text-dark">
+                                                                                <?= $item['trangthai'] ?>
+                                                                            <?php } else if ($item['trangthai'] == "đã giao") { ?>
+                                                                                <div class="badge bg-success text-dark">
+                                                                                    <?= $item['trangthai'] ?>
+                                                                                <?php } else { ?>
+                                                                                    <div class="badge bg-danger text-dark">
+                                                                                        <?= $item['trangthai'] ?>
+                                                                                    <?php   } ?>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                </td>
                                                                 <td><a href="?mod=user&act=orderDetail&idOrder=<?= $item['madh'] ?>" class="btn btn-primary">Chi tiết</a></td>
                                                                 <td><a href="?mod=user&act=deleteOrder&idOrder=<?= $item['madh'] ?>" class="btn btn-primary">Hủy</a></td>
                                                             </tr>

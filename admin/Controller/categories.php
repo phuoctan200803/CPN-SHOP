@@ -39,8 +39,8 @@ if ($_GET['act']) {
                     save_file('anh', '../img/categories/');
                     header("location:admin.php?mod=categories&act=show");
                 }
+                $viewName = 'page_add_categories';
             }
-            $viewName = 'page_add_categories';
 
             break;
         case "edit":
@@ -63,11 +63,11 @@ if ($_GET['act']) {
                     );
                     header("location:admin.php?mod=categories&act=show");
                 }
+                $viewName = 'page_edit_categories';
             }
-            $viewName = 'page_edit_categories';
             break;
         default:
-            #404
+            $viewName = '404';
             break;
     }
     include_once "View/admin_layout.php";

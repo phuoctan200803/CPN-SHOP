@@ -40,7 +40,7 @@ if ($_GET['act']) {
                     save_file('userImg', 'img/account/');
                 }
                 if (empty($error)) {
-                    $kq = signUp($username, $_POST['birthday'], $email, $password);
+                    $kq = signUp($username, $email, $password);
                     header('location:?mod=user&act=login');
                 }
             }
@@ -165,6 +165,7 @@ if ($_GET['act']) {
             break;
         case "info":
             // print_r($_SESSION['user']);
+            // return;
             $viewName = 'page_info';
             break;
         case "infoorder":

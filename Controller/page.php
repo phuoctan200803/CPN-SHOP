@@ -44,9 +44,18 @@ if ($_GET['act']) {
             $viewName = 'page_detail';
             break;
         case 'category':
+            $productsPerPage = 9;
+            $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+            $start = ($currentPage - 1) * $productsPerPage;
+
+
             if (isset($_GET['cat_id'])) {
-                $data = getProductByCatID($_GET['cat_id']);
+                $cat_id = $_GET['cat_id'];
+                $data = getProductByCatID($_GET['cat_id'], $start, $productsPerPage);
+                $totalProducts = CountProductByCatID($_GET['cat_id']);
+                $totalPages = ceil($totalProducts / $productsPerPage);
             }
+
             $viewName = 'page_category';
             break;
         case 'info':

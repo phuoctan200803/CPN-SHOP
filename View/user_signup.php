@@ -22,13 +22,10 @@
                 <h3 class="mb-4">Sign up</h3>
                 <form method="post" action="" enctype="multipart/form-data">
                     <div class="control-group mb-3">
-                        <input type="text" class="form-control" id="name" name="username" placeholder="Your Name"
-                            value="<?php if (isset($username)) {
-                                                                                                                                echo $username;
-                                                                                                                            } ?>">
+                        <input type="text" class="form-control" id="name" name="username" placeholder="Your Name" value="">
                     </div>
                     <?php if (isset($error) && !empty($error['username'])) : ?>
-                    <div class="alert alert-warning"><?php echo $error['username'] ?></div>
+                        <div class="alert alert-warning"><?php echo $error['username'] ?></div>
                     <?php
                     endif;
                     unset($error['username']);
@@ -38,26 +35,23 @@
                         <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Your birthday">
                     </div> -->
                     <div class="control-group mb-3">
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Your Email"
-                            value="<?php if (isset($email)) {
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Your Email" value="<?php if (isset($email)) {
                                                                                                                             echo $email;
                                                                                                                         } ?>">
                     </div>
                     <?php if (isset($error) && !empty($error['email'])) : ?>
-                    <div class="alert alert-warning"><?php echo  $error['email'] ?></div>
+                        <div class="alert alert-warning"><?php echo  $error['email'] ?></div>
 
                     <?php
                     endif;
                     unset($error['email']); ?>
                     <div class="control-group mb-3">
-                        <input type="password" class="form-control" id="password" name="password"
-                            placeholder="Your Password"
-                            value="<?php if (isset($passTemp)) {
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Your Password" value="<?php if (isset($passTemp)) {
                                                                                                                                             echo $passTemp;
                                                                                                                                         } ?>">
                     </div>
                     <?php if (isset($error) && !empty($error['password'])) : ?>
-                    <div class="alert alert-warning"><?php echo $error['password'] ?></div>
+                        <div class="alert alert-warning"><?php echo $error['password'] ?></div>
                     <?php
                     endif;
                     unset($error['password']);
@@ -67,8 +61,7 @@
                         <input type="file" name="userImg" class="form-controller">
                     </div>
                     <div>
-                        <input class="btn btn-primary py-2 px-4" type="submit" name="submit_signup"
-                            id="sendMessageButton" value="Sign Up">
+                        <input class="btn btn-primary py-2 px-4" type="submit" name="submit_signup" id="sendMessageButton" value="Sign Up">
                     </div>
 
                 </form>

@@ -23,6 +23,12 @@ $list_Cate = category_select_all();
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- Thư viện noUiSlider CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/nouislider/distribute/nouislider.min.css">
+
+    <!-- Thư viện noUiSlider JS -->
+    <script src="https://unpkg.com/nouislider"></script>
+
 
     <!-- Libraries Stylesheet -->
     <link href="template/assets_user/lib/animate/animate.min.css" rel="stylesheet">
@@ -48,22 +54,20 @@ $list_Cate = category_select_all();
         <div class="col-lg-6 text-center text-lg-right">
             <div class="d-inline-flex align-items-center">
                 <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-light dropdown-toggle"
-                        data-toggle="dropdown"><?= (isset($_SESSION['user']['hoten'])) ? $_SESSION['user']['hoten'] : "My account" ?></button>
+                    <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown"><?= (isset($_SESSION['user']['hoten'])) ? $_SESSION['user']['hoten'] : "My account" ?></button>
                     <div class="dropdown-menu dropdown-menu-right">
                         <?php if (!isset($_SESSION['user'])) { ?>
-                        <a href="?mod=user&act=login" class="dropdown-item">Log in</a>
-                        <a href="?mod=user&act=signup" class="dropdown-item">Sign up</a>
+                            <a href="?mod=user&act=login" class="dropdown-item">Log in</a>
+                            <a href="?mod=user&act=signup" class="dropdown-item">Sign up</a>
                         <?php }
                         ?>
                         <?php if (isset($_SESSION['user'])) { ?>
-                        <a href="?mod=user&act=logout" class="dropdown-item">Log out</a>
-                        <a href="?mod=user&act=change_pass" class="dropdown-item">Change Password</a>
-                        <?php if ($_SESSION['user']['quyen'] == 'admin') { ?>
-                        <a href="admin/admin.php" class="dropdown-item">Trang quản trị</a><?php } ?>
-                        <a href="?mod=user&act=edit&id=<?php echo $_SESSION['user']['matk'] ?>"
-                            class="dropdown-item">Cập nhật tài khoản</a>
-                        <a href="?mod=user&act=info" class="dropdown-item">Thông tin tài khoản</a>
+                            <a href="?mod=user&act=logout" class="dropdown-item">Log out</a>
+                            <a href="?mod=user&act=change_pass" class="dropdown-item">Change Password</a>
+                            <?php if ($_SESSION['user']['quyen'] == 'admin') { ?>
+                                <a href="admin/admin.php" class="dropdown-item">Trang quản trị</a><?php } ?>
+                            <a href="?mod=user&act=edit&id=<?php echo $_SESSION['user']['matk'] ?>" class="dropdown-item">Cập nhật tài khoản</a>
+                            <a href="?mod=user&act=info" class="dropdown-item">Thông tin tài khoản</a>
                         <?php }
                         ?>
                     </div>
@@ -72,13 +76,11 @@ $list_Cate = category_select_all();
             <div class="d-inline-flex align-items-center d-block d-lg-none">
                 <a href="" class="btn px-0 ml-2">
                     <i class="fas fa-heart"></i>
-                    <span class="badge text-dark border border-dark rounded-circle"
-                        style="padding-bottom: 2px;">0</span>
+                    <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
                 </a>
                 <a href="" class="btn px-0 ml-2">
                     <i class="fas fa-shopping-cart text-dark"></i>
-                    <span class="badge text-dark border border-dark rounded-circle"
-                        style="padding-bottom: 2px;">0</span>
+                    <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
                 </a>
             </div>
         </div>
@@ -94,12 +96,10 @@ $list_Cate = category_select_all();
         </div>
         <div class="col-lg-4 col-6 text-left">
 
-            <form action="index.php?mod=product&act=search" method="post">
+            <form action="?mod=product&act=search" method="POST">
                 <div class="input-group">
-                    <input type="text" name="keyword" placeholder="Nhập từ khóa tìm kiếm"
-                        class="input-group-text bg-transparent" style="width: max-content;">
-                    <input type="submit" value="Tìm Kiếm" class="input-group-text bg-transparent text-primary"
-                        style="width: max-content;">
+                    <input type="text" name="keyword" placeholder="Nhập từ khóa tìm kiếm" class="input-group-text bg-transparent" style="width: max-content;">
+                    <input type="submit" value="Tìm Kiếm" class="input-group-text bg-transparent text-primary" style="width: max-content;">
                 </div>
             </form>
         </div>
@@ -118,18 +118,16 @@ $list_Cate = category_select_all();
 <div class="container-fluid bg-main">
     <div class="row px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
-            <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse"
-                href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
+            <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
                 <h6 class="text-white m-0"><i class="fa fa-bars mr-2"></i>Danh mục</h6>
                 <i class="fa fa-angle-down text-dark"></i>
             </a>
-            <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
-                id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
+            <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
                 <div class="navbar-nav w-100">
                     <div class="nav-item dropdown drop-right">
                         <?php foreach ($list_Cate as $dm) : ?>
-                        <a href="index.php?mod=page&act=category&cat_id=<?= $dm['madm'] ?>" class=" nav-item nav-link">
-                            <?= $dm['tendm'] ?></a>
+                            <a href="index.php?mod=page&act=category&cat_id=<?= $dm['madm'] ?>" class=" nav-item nav-link">
+                                <?= $dm['tendm'] ?></a>
                         <?php endforeach; ?>
 
                         <a href="index.php?mod=page&act=category" class="nav-item nav-link">Danh mục</a>
@@ -152,27 +150,18 @@ $list_Cate = category_select_all();
                     <div class="navbar-nav mr-auto py-0 text-white">
                         <a href="index.php" class="nav-item nav-link text-white">Trang chủ</a>
                         <a href="?mod=page&act=about" class="nav-item nav-link">Giới thiệu</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i
-                                    class="fa fa-angle-down mt-1"></i></a>
-                            <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                <a href="?mod=cart&act=show" class="dropdown-item">Shopping Cart</a>
-                                <a href="?mod=cart&act=checkout" class="dropdown-item">Checkout</a>
-                            </div>
-                        </div>
+
                         <a href="?mod=page&act=contact" class="nav-item nav-link">Liên hệ</a>
                     </div>
                     <div class="navbar-nav py-0 d-none d-lg-block">
                         <a href="" class="btn px-0">
                             <i class="fas fa-heart text-white"></i>
-                            <span class="badge text-secondary border border-secondary rounded-circle"
-                                style="padding-bottom: 2px;">0</span>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                         </a>
                         <a href="?mod=cart&act=show" class="btn px-0 ml-3">
 
                             <i class="fas fa-shopping-cart text-white"></i>
-                            <span class="badge text-secondary border border-secondary rounded-circle"
-                                style="padding-bottom: 2px;"><?php if (!empty($_SESSION['cart'])) {
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php if (!empty($_SESSION['cart'])) {
                                                                                                                                         echo $_SESSION['cart']['info']['num_order'];
                                                                                                                                     } ?></span>
                         </a>
@@ -233,7 +222,7 @@ $list_Cate = category_select_all();
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Your Email Address">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary">Đăng Nhập</button>
+                                    <button class="btn btn-primary">Gửi</button>
                                 </div>
                             </div>
                         </form>

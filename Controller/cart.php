@@ -62,6 +62,7 @@ if ($_GET['act']) {
                     $thongbao = "Vui lòng điền đủ thông tin";
                 } else {
                     $tongtien = $_SESSION['cart']['info']['total'];
+                    $_SESSION['user']['sodienthoai'] = $_POST['mobile'];
                     if (!isset($_SESSION['user'])) {
                         $hoten = $_POST['name'];
                         $email = $_POST['email'];
@@ -74,6 +75,8 @@ if ($_GET['act']) {
                         $hoten = $_SESSION['user']['hoten'];
                         $sdt = $_POST['mobile'];
                         $diaChi = $_POST['address'];
+                        // echo $sdt;
+                        // return;
                         updateInfo($matk, $sdt, $diaChi);
                     }
                     addOrder($matk, $tongtien, $diaChi);
@@ -83,9 +86,9 @@ if ($_GET['act']) {
                 }
             }
 
-            header("location:index.php?mod=page&act=success");
+            // header("location:index.php?mod=page&act=success");
 
-            // include_once "View/sendmail.php";
+            include_once "View/sendmail.php";
 
             break;
         case 'success':

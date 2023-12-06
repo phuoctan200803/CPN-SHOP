@@ -136,3 +136,19 @@ function pdo_query_value($sql)
         unset($conn);
     }
 }
+function pdo_query_value_one($sql)
+{
+    $sql_args = array_slice(func_get_args(), 1);
+    try {
+        $conn = pdo_get_connection();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($sql_args);
+        // Use fetch without array_values
+        $value = $stmt->fetch(PDO::FETCH_COLUMN);
+        return $value !== false ? $value : null;
+    } catch (PDOException $e) {
+        throw $e;
+    } finally {
+        unset($conn);
+    }
+}

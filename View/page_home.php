@@ -13,8 +13,7 @@
                     <div class="p-3" style="max-width: 700px;">
                         <!-- <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">Men Fashion -->
                         </h1>
-                        <a class="btn btn-primary btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                            href="#">Shop Now</a>
+
                     </div>
                 </div>
             </div>
@@ -26,8 +25,7 @@
                             <!-- Fashion</h1> -->
                             <!-- <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem
                             magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p> -->
-                            <a class="btn btn-primary btn-outline-light py-2 px-4 mt-3 animate__animated animate__fadeInUp"
-                                href="#">Shop Now</a>
+
                     </div>
                 </div>
             </div>
@@ -39,8 +37,6 @@
                         </h1>
                         <p class="mx-md-5 px-5 animate__animated animate__bounceIn">Lorem rebum magna amet lorem
                             magna erat diam stet. Sadips duo stet amet amet ndiam elitr ipsum diam</p> -->
-                        <a class="btn btn-primary btn-outline-light py-2 px-10 mt-3 animate__animated animate__fadeInUp"
-                            href="#">Shop Now</a>
 
                     </div>
                 </div>
@@ -144,8 +140,8 @@
                     <div class="product-action">
                         <a class="btn btn-outline-dark btn-square" href="?mod=cart&act=add&id=<?= $item['masp'] ?>"><i
                                 class="fa fa-shopping-cart"></i></a>
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <!-- <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a> -->
                         <a class="btn btn-outline-dark btn-square"
                             href="?mod=page&act=detail&id=<?= $item['masp'] ?>"><i class="fa fa-search"></i></a>
                     </div>

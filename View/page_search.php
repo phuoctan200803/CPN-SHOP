@@ -142,10 +142,9 @@
                                 </a>
                             </li>
                             <?php for ($i = 1; $i <= $totalPages; $i++) { ?>
-                                <!-- <li class="page-item"><a class="page-link" href="?mod=product&act=search&search=<?= $keyword ?>&page=<?= $i ?>"><?= $i ?></a>
-                                </li> -->
-                                <li class="page-item"><a class="page-link" href="?mod=page&act=category&cat_id=<?= $cat_id ?>&page=<?= $i ?>"><?= $i ?></a>
+                                <li class="page-item"><a class="page-link" href="?mod=product&act=search&search=<?= $keyword ?>&page=<?= $i ?>"><?= $i ?></a>
                                 </li>
+
                             <?php } ?>
 
                             <li class=" page-item">

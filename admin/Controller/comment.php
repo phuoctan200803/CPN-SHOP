@@ -38,7 +38,8 @@ if ($_GET['act']) {
             }
             break;
         default:
-            #404
+            $viewName = '404';
+
             break;
     }
     include_once "View/admin_layout.php";

@@ -106,7 +106,7 @@ if ($_GET['act']) {
             $viewName = 'product_edit';
             break;
         default:
-            #404-Trang web khong ton tai
+            $viewName = '404';
             break;
     }
     include_once "View/admin_layout.php";

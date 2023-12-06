@@ -59,8 +59,8 @@ if ($_GET['act']) {
                     }
                     header("location:admin.php?mod=account&act=show");
                 }
+                $viewName = 'page_edit_account';
             }
-            $viewName = 'page_edit_account';
             break;
         case "delete":
             if (isset($_GET['id'])) {
@@ -86,7 +86,7 @@ if ($_GET['act']) {
             header("location:../index.php");
             break;
         default:
-            #404
+            $viewName = '404';
             break;
     }
     include_once "View/admin_layout.php";
