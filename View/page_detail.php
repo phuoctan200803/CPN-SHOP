@@ -71,7 +71,8 @@
                                 </button>
                             </div>
 
-                            <input type="number" class="form-control form-control-sm bg-secondary border-0 text-center" name="<?= $item['masp']; ?>" value="1" min="1" />
+                            <input type="number" class="form-control form-control-sm bg-secondary border-0 text-center"
+                                name="<?= $item['masp']; ?>" value="1" min="1" />
                             <div class="input-group-btn">
                                 <button type="button" class="btn btn-primary btn-plus">
                                     <i class="fa fa-plus"></i>
@@ -81,7 +82,7 @@
 
                         </div>
                         <!-- <a href="?mod=cart&act=add&page=detail&id=<?= $item['masp'] ?>"> -->
-                        <button type="submit" class="btn btn-primary px-3" ><i class="fa fa-shopping-cart mr-1"></i> Add
+                        <button type="submit" class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add
                             To
                             Cart</button></a>
                     </div>
@@ -111,9 +112,9 @@
         <div class="col">
             <div class="bg-light p-30">
                 <div class="nav nav-tabs mb-4">
-                    <a class="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-1">Description</a>
-                    <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">Information</a>
-                    <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Reviews
+                    <a class="nav-item nav-link text-dark active" data-toggle="tab" href="#tab-pane-1">Mô tả</a>
+                    <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">Thông tin</a>
+                    <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Đánh giá
                         <?= ($countComment) ?></a>
                 </div>
                 <div class="tab-content">
@@ -172,28 +173,29 @@
                                 <?= ($countComment) ?> reviews for "<?= $item['tensp'] ?>"
                             </h4>
                             <?php foreach ($listComment as $value) { ?>
-                                <div class="media mb-4">
-                                    <div class="row"> <img src="img/account/<?= $value['anh'] ?>" alt="Image" class="img-fluid mr-3 mt-1" style="width: 40px; height: 40px;">
-                                        <div class="media-body">
-                                            <h6><?= $value['hoten'] ?><small> - <i>01 Jan 2045</i></small></h6>
-                                            <div class="text-primary mb-2">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star-half-alt"></i>
-                                                <i class="far fa-star"></i>
-                                            </div>
-                                            <p><?= $value['noidung'] ?></p>
+                            <div class="media mb-4">
+                                <div class="row"> <img src="img/account/<?= $value['anh'] ?>" alt="Image"
+                                        class="img-fluid mr-3 mt-1" style="width: 40px; height: 40px;">
+                                    <div class="media-body">
+                                        <h6><?= $value['hoten'] ?><small> - <i>01 Jan 2045</i></small></h6>
+                                        <div class="text-primary mb-2">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
                                         </div>
+                                        <p><?= $value['noidung'] ?></p>
                                     </div>
-
                                 </div>
+
+                            </div>
                             <?php } ?>
                         </div>
 
                         <!-- <div class="row"> -->
                         <div class="col-md-6">
-                            <h4 class="mb-4">Your review</h4>
+                            <h4 class="mb-4">Bình luận</h4>
                             <small>Your email address will not be published. Required fields are marked *</small>
                             <div class="d-flex my-3">
                                 <p class="mb-0 mr-2">Your Rating * :</p>
@@ -207,15 +209,17 @@
                             </div>
                             <?php
                             if (isset($_SESSION['user'])) { ?>
-                                <form action="" method="POST">
-                                    <div class="form-group">
-                                        <label for="message">Your Review </label>
-                                        <textarea id="message" cols="30" rows="5" class="form-control" name="content"></textarea>
-                                    </div>
-                                    <div class="form-group mb-0">
-                                        <input type="submit" name="sub_review" value="Leave Your Review" class="btn btn-primary px-3">
-                                    </div>
-                                </form>
+                            <form action="" method="POST">
+                                <div class="form-group">
+                                    <label for="message">Đánh giá</label>
+                                    <textarea id="message" cols="30" rows="5" class="form-control"
+                                        name="content"></textarea>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <input type="submit" name="sub_review" value="Leave Your Review"
+                                        class="btn btn-primary px-3">
+                                </div>
+                            </form>
                             <?php } else {
                                 echo "<div><a href='?mod=user&act=login'>Đăng nhập để bình luận </a></div>";
                             }
@@ -232,42 +236,44 @@
 <!-- Shop Detail End -->
 <!-- Products Start -->
 <div class="container-fluid py-5">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">You May Also
-            Like</span></h2>
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Sản phẩm
+            liên quan</span></h2>
     <div class="row px-xl-5">
         <?php if (!empty($listProductRandDom)) {
             foreach ($listProductRandDom  as $item) {
         ?>
 
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                    <div class="product-item bg-light mb-4">
-                        <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/product/<?= $item['anhsp'] ?>" alt="">
-                            <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href="?mod=cart&act=add&id=<?= $item['masp'] ?>"><i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href="?mod=page&act=detail&id=<?= $item['masp'] ?>"><i class="fa fa-search"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href=""><?= $item['tensp'] ?></a>
-                            <div class="d-flex align-items-center justify-content-center mt-2">
-                                <h5><?= number_format($item['giakhuyenmai']) ?> đ</h5>
-                                <h6 class="text-muted ml-2"><del><?= number_format($item['gia']) ?> đ</del>
-                                </h6>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small>(99)</small>
-                            </div>
-                        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="product-item bg-light mb-4">
+                <div class="product-img position-relative overflow-hidden">
+                    <img class="img-fluid w-100" src="img/product/<?= $item['anhsp'] ?>" alt="">
+                    <div class="product-action">
+                        <a class="btn btn-outline-dark btn-square" href="?mod=cart&act=add&id=<?= $item['masp'] ?>"><i
+                                class="fa fa-shopping-cart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                        <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                        <a class="btn btn-outline-dark btn-square"
+                            href="?mod=page&act=detail&id=<?= $item['masp'] ?>"><i class="fa fa-search"></i></a>
                     </div>
                 </div>
+                <div class="text-center py-4">
+                    <a class="h6 text-decoration-none text-truncate" href=""><?= $item['tensp'] ?></a>
+                    <div class="d-flex align-items-center justify-content-center mt-2">
+                        <h5><?= number_format($item['giakhuyenmai']) ?> đ</h5>
+                        <h6 class="text-muted ml-2"><del><?= number_format($item['gia']) ?> đ</del>
+                        </h6>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mb-1">
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small class="fa fa-star text-primary mr-1"></small>
+                        <small>(99)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
         <?php }
         } ?>
     </div>

@@ -53,16 +53,16 @@ if (isset($_SESSION['user'])) {
                         </div>
                         <div class="col-md-12 form-group">
                             <label>Số điện thoại</label>
-                            <input class="form-control" type="text" placeholder="+123 456 789" name="mobile" required="required" data-validation-required-message="Vui lòng điền số điện thoại" value="<?php if (!empty($phone)) {
+                            <input class="form-control" type="phone" placeholder="+123 456 789" name="mobile" required="required" data-validation-required-message="Vui lòng điền số điện thoại" value="<?php if (!empty($phone)) {
                                                                                                                                                                                                             echo $phone;
                                                                                                                                                                                                         } ?>">
 
                         </div>
                         <div class="col-md-12 form-group">
                             <label>Địa chỉ </label>
-                            <input class="form-control" type="text" placeholder="123 Street" name="address" required="required" data-validation-required-message="Vui lòng điền địa chỉ" value=" <?php if (isset($address)) {
-                                                                                                                                                                                                        echo $address;
-                                                                                                                                                                                                    } ?>">
+                            <input class="form-control" type="text" placeholder="123 Street" name="address" required="required" data-validation-required-message="Vui lòng điền địa chỉ" value="<?php if (!empty($address)) {
+                                                                                                                                                                                                    echo $address;
+                                                                                                                                                                                                } ?>">
                             <p class="help-block text-danger"></p>
                         </div>
 

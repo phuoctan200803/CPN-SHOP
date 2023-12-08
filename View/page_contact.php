@@ -3,7 +3,8 @@
     <div class="row px-xl-5">
         <div class="col-12">
             <nav class="breadcrumb bg-light mb-30">
-                <a class="breadcrumb-item text-dark" href="#">Home</a>
+                <a class="breadcrumb-item text-dark" href="?mod=page&act=home
+                ">Home</a>
                 <span class="breadcrumb-item active">Contact</span>
             </nav>
         </div>
@@ -44,7 +45,7 @@
         </div>
         <div class="col-lg-5 mb-5">
             <div class="bg-light p-30 mb-30">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7801747211456!2d106.61926797460386!3d10.82812775823884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bd0c28f2e15%3A0xab4822c52cbad6e0!2zNzQgUGhhbiBWxINuIEjhu5tuLCBUw6JuIFRo4bubaSBOaOG6pXQsIFF14bqtbiAxMiwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1695734730391!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.7801747211456!2d106.61926797460386!3d10.82812775823884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752bd0c28f2e15%3A0xab4822c52cbad6e0!2zNzQgUGhhbiBWxINuIEjhu5tuLCBUw6JuIFRo4bubaSBOaOG6pXQsIFF14bqtbiAxMiwgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1695734730391!5m2!1sen!2s" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="bg-light p-30 mb-3">
                 <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>74/1, Phan Văn Hớn, Quận 12, Hồ
